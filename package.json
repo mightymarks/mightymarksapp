@@ -1,0 +1,11 @@
+{
+	"name": "mightymarks.app",
+	"version": "0.1.0",
+	"description": "Mighty Marks website",
+	"main": "index.js",
+	"repository": "https://github.com/mightymarks/mightymarks.app.git",
+	"author": "Alex Sanders <a@snd.rs>",
+	"scripts": {
+		"test": "echo 'should add some tests'"
+	}
+}
