@@ -1,6 +1,14 @@
 import { graphql, useStaticQuery } from 'gatsby'
+import { styled } from 'linaria/react'
 import React from 'react'
-import { Box } from 'reflexbox'
+
+const SiteName = styled.span`
+	p & {
+		/* font-style: italic; */
+		text-transform: uppercase;
+		display: inline-block;
+	}
+`
 
 export default props => {
 	const data = useStaticQuery(graphql`
@@ -13,14 +21,5 @@ export default props => {
 		}
 	`)
 
-	return (
-		<Box
-			as="span"
-			sx={{ 'p &': { fontStyle: 'italic' } }}
-			display="inline-block"
-			{...props}
-		>
-			{data.site.siteMetadata.name}
-		</Box>
-	)
+	return <SiteName {...props}>{data.site.siteMetadata.name}</SiteName>
 }
