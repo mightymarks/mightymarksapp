@@ -4607,11 +4607,6 @@ gatsby-plugin-google-analytics@2.1.20:
   dependencies:
     "@babel/runtime" "^7.6.2"
 
-gatsby-plugin-google-fonts@1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-fonts/-/gatsby-plugin-google-fonts-1.0.1.tgz#d71054f7bf207b9a8da227380369e18e6f4e0201"
-  integrity sha512-p1NVkn27GUnDA5qHM+Z4cCcLCJIardzZXMon3640sT4xuL/AZJbsx3HEt2KY/5oZu0UXIkytkxzV2Da4rQeUIg==
-
 gatsby-plugin-linaria@1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-linaria/-/gatsby-plugin-linaria-1.2.2.tgz#68b872ba805e5ceba6a9989056416db1f2877ea9"
@@ -10270,6 +10265,11 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
+
+typeface-roboto-mono@0.0.75:
+  version "0.0.75"
+  resolved "https://registry.yarnpkg.com/typeface-roboto-mono/-/typeface-roboto-mono-0.0.75.tgz#00c4543662066a837c014c251ee5140fb66a5ad8"
+  integrity sha512-dYfyXd6HrKyMC/PuBAAtay0tZKsBrzxIW/fBY325vLxFfi/IDKSuyTkWxkU4lyZV6KPHetFnJ661PNXzz2FS/w==
 
 typescript@3.6.3:
   version "3.6.3"

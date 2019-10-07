@@ -65,13 +65,6 @@ module.exports = {
 			},
 		},
 		{
-			resolve: `gatsby-plugin-google-fonts`,
-			options: {
-				fonts: [`Roboto+Mono:300,300i,400,400i`],
-				display: 'swap',
-			},
-		},
-		{
 			resolve: 'gatsby-plugin-react-svg',
 			options: {
 				rule: {
