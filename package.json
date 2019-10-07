@@ -7,36 +7,35 @@
 	"author": "Alex Sanders <a@snd.rs>",
 	"scripts": {
 		"test": "echo 'should add some tests'",
-		"build": "gatsby build",
-		"dev": "gatsby develop"
+		"build": "yarn clean && gatsby build",
+		"serve": "gatsby serve",
+		"dev": "gatsby develop",
+		"clean": "rm -rf ./public"
 	},
 	"dependencies": {
 		"@babel/core": "7.6.2",
-		"@emotion/core": "^10.0.20",
-		"@mdx-js/mdx": "1.5.0",
-		"@mdx-js/react": "1.5.0",
-		"@types/react-helmet": "^5.0.11",
-		"@types/reflexbox": "^4.0.0",
-		"@types/theme-ui": "^0.2.3",
+		"@types/react-helmet": "5.0.11",
 		"eslint": "6.5.1",
 		"eslint-plugin-flowtype": "2.50.3",
-		"gatsby": "2.15.28",
+		"gatsby": "2.15.29",
 		"gatsby-plugin-canonical-urls": "2.1.10",
-		"gatsby-plugin-google-analytics": "2.1.19",
-		"gatsby-plugin-mdx": "1.0.46",
-		"gatsby-plugin-preact": "^3.1.13",
+		"gatsby-plugin-google-analytics": "2.1.20",
+		"gatsby-plugin-google-fonts": "1.0.1",
+		"gatsby-plugin-linaria": "1.2.2",
+		"gatsby-plugin-manifest": "2.2.20",
+		"gatsby-plugin-netlify": "2.1.17",
+		"gatsby-plugin-preact": "3.1.14",
 		"gatsby-plugin-react-helmet": "3.1.10",
+		"gatsby-plugin-react-svg": "2.1.2",
 		"gatsby-plugin-robots-txt": "1.5.0",
 		"gatsby-plugin-sitemap": "2.2.16",
 		"gatsby-plugin-typescript": "2.1.11",
 		"gatsby-plugin-webpack-bundle-analyzer": "1.0.5",
-		"gatsby-source-filesystem": "^2.1.28",
-		"preact": "^10.0.0",
-		"react": "16.10.1",
-		"react-dom": "16.10.1",
+		"linaria": "1.3.1",
+		"preact": "10.0.0",
+		"react": "16.10.2",
+		"react-dom": "16.10.2",
 		"react-helmet": "5.2.1",
-		"reflexbox": "^4.0.6",
-		"theme-ui": "^0.2.43",
 		"typescript": "3.6.3"
 	},
 	"renovate": {
@@ -48,5 +47,10 @@
 		"major": {
 			"automerge": false
 		}
-	}
+	},
+	"browserslist": [
+		"chrome >= 55",
+		"firefox >= 52",
+		"> 1%"
+	]
 }
