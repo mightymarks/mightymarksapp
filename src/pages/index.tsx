@@ -20,7 +20,7 @@ const Grid = styled.div`
 
 const Header = styled.header`
 	background-color: ${colors.darkWhite};
-	padding: 14vw;
+	padding: 10vw;
 
 	${tablet} {
 		padding: 7vw;
@@ -30,7 +30,7 @@ const Header = styled.header`
 const Callout = styled.h2`
 	color: ${colors.darkWhite};
 	font-family: ${fonts.mono};
-	font-size: ${fontSizes[0]};
+	font-size: ${fontSizes[1]};
 	text-transform: uppercase;
 	letter-spacing: 0.03em;
 	font-weight: normal;
@@ -40,15 +40,19 @@ const Callout = styled.h2`
 	padding: ${space[1]} ${space[2]};
 	margin-left: ${space[1]};
 	-webkit-font-smoothing: antialiased;
+
+	${tablet} {
+		font-size: ${fontSizes[0]};
+	}
 `
 
 const ShootingStar = styled(ShootingStarSVG)`
 	fill: ${colors.blue};
-	width: 8vw;
+	width: 10vw;
 	height: auto;
 	position: absolute;
 	right: 0;
-	top: 3.5vw;
+	top: 2vw;
 
 	${tablet} {
 		top: 3.5vw;
@@ -65,7 +69,7 @@ const Hero = styled.h1`
 	line-height: ${lineHeights.hero};
 	word-break: break-word;
 	hyphens: auto;
-	padding-top: 12vw;
+	padding-top: 9vw;
 
 	${mobileS} {
 		word-break: normal;
@@ -80,7 +84,7 @@ const Hero = styled.h1`
 
 const Main = styled.main`
 	background-color: ${colors.black};
-	padding: 14vw;
+	padding: 10vw;
 	-webkit-font-smoothing: antialiased;
 
 	${tablet} {
@@ -113,21 +117,29 @@ const Heading = styled.h3`
 	font-family: ${fonts.mono};
 	font-weight: normal;
 	color: ${colors.red};
-	font-size: ${fontSizes[0]};
+	font-size: ${fontSizes[1]};
 	text-transform: uppercase;
 	letter-spacing: 0.03em;
 	display: inline-block;
 	-webkit-font-smoothing: auto;
 	margin-bottom: 0.35em;
+
+	${tablet} {
+		font-size: ${fontSizes[0]};
+	}
 `
 
 const Text = styled.p`
 	font-family: ${fonts.sans};
-	font-size: ${fontSizes[1]};
+	font-size: ${fontSizes[3]};
 	margin-bottom: ${space[3]};
 	font-weight: 400;
 	line-height: ${lineHeights.text};
 	max-width: 50ch;
+
+	${tablet} {
+		font-size: ${fontSizes[1]};
+	}
 
 	em {
 		font-style: normal;
@@ -162,9 +174,10 @@ const Index = () => (
 				<Section>
 					<Heading>$1.99/month</Heading>
 					<Text>
-						The first month is free. If you don't think it's worth paying for,
-						you can cancel at any time within the first month without charge.
+						The first month is free, during which you can cancel at any time
+						without charge.
 					</Text>
+					<Text>After that, $1.99 per month.</Text>
 				</Section>
 				<Section>
 					<Heading>Your data is yours</Heading>
