@@ -22,26 +22,25 @@ const SEO = ({ pathname = '/', article = false }: Props) => {
 			}
 		}
 	`)
-	const titleTemplate = `${data.site.siteMetadata.name} – %s`
+
+	const title = `${
+		data.site.siteMetadata.name
+	} – ${data.site.siteMetadata.title.toLowerCase()}`
+
 	const hostname = (path: string) => `${data.site.siteMetadata.siteUrl}${path}`
 
 	return (
 		<Helmet
-			titleTemplate={titleTemplate}
 			htmlAttributes={{
 				lang: 'en',
 			}}
 		>
-			<title>{data.site.siteMetadata.title}</title>
+			<title>{title}</title>
 			<meta name="description" content={data.site.siteMetadata.description} />
 			<meta name="image" content={hostname(ogImage)} />
 
 			<meta property="og:url" content={hostname(pathname)} />
-			{(article ? true : null) && <meta property="og:type" content="article" />}
-			<meta
-				property="og:title"
-				content={titleTemplate.replace('%s', data.site.siteMetadata.title)}
-			/>
+			<meta property="og:title" content={title} />
 			<meta
 				property="og:description"
 				content={data.site.siteMetadata.description}

@@ -1,3 +1,5 @@
+const { colors } = require('./src/theme')
+
 const siteMetadata = {
 	name: 'Mighty Marks',
 	title: 'Synchronize bookmarks!',
@@ -49,8 +51,31 @@ module.exports = {
 				disable: process.env.NODE_ENV !== 'production',
 			},
 		},
+		{
+			resolve: `gatsby-plugin-manifest`,
+			options: {
+				name: siteMetadata.name,
+				short_name: siteMetadata.name,
+				start_url: `/`,
+				background_color: colors.darkWhite,
+				theme_color: colors.red,
+				display: `standalone`,
+				icon: `src/images/red-stroke-512.png`,
+				cache_busting_mode: `name`,
+			},
+		},
+		{
+			resolve: 'gatsby-plugin-react-svg',
+			options: {
+				rule: {
+					include: /src/,
+				},
+			},
+		},
 		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-typescript',
 		'gatsby-plugin-preact',
+		'gatsby-plugin-linaria',
+		'gatsby-plugin-netlify',
 	],
 }

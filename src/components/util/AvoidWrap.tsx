@@ -1,7 +1,7 @@
-import styled from '@emotion/styled'
+import { styled } from 'linaria/react'
 
-const AvoidWrap = styled.span({
-	display: 'inline-block',
-})
+const AvoidWrap = styled.span`
+	display: inline-block;
+`
 
 export default AvoidWrap
