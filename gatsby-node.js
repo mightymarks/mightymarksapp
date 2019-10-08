@@ -9,18 +9,18 @@ exports.onCreateWebpackConfig = ({
 	/* eslint-enable @typescript-eslint/no-unused-vars */
 }) => {
 	const config = getConfig()
-	const imageRule = rules.images()
-	const urlLoader = loaders.url({ limit: 1000 })
 
+	// only inline images less than 1000 bytes
+	const imageRule = rules.images()
 	const myImageRules = [
 		{
 			test: new RegExp(
 				imageRule.test
 					.toString()
-					.replace('svg|', '')
+					.replace('svg|', '') // not svgs though
 					.slice(1, -1),
 			),
-			use: [urlLoader],
+			use: [loaders.url({ limit: 1000 })],
 		},
 	]
 

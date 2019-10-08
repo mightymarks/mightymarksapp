@@ -46,6 +46,7 @@ module.exports = {
 			resolve: 'gatsby-plugin-webpack-bundle-analyzer',
 			options: {
 				analyzerMode: 'static',
+				defaultSizes: 'gzip',
 				openAnalyzer: false,
 				production: true,
 				disable: process.env.NODE_ENV !== 'production',
@@ -72,10 +73,21 @@ module.exports = {
 				},
 			},
 		},
+		{
+			resolve: `gatsby-plugin-netlify`,
+			options: {
+				mergeCachingHeaders: true,
+				headers: {
+					'/icons/*': ['Cache-Control: public, max-age=31536000, immutable'],
+				},
+				allPageHeaders: [
+					'Link: </static/roboto-mono-v7-latin-regular-0c94e034ca06357576c2d03d623e1fcd.woff2>; rel=preload; as=font',
+				],
+			},
+		},
 		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-typescript',
 		'gatsby-plugin-preact',
 		'gatsby-plugin-linaria',
-		'gatsby-plugin-netlify',
 	],
 }
