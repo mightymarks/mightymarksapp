@@ -1,3 +1,5 @@
+import sortBy from 'lodash.sortby'
+
 export const onPreRenderHTML = ({
 	getHeadComponents,
 	replaceHeadComponents,
