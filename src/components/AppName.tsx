@@ -2,7 +2,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import { styled } from 'linaria/react'
 import React from 'react'
 
-const SiteName = styled.span`
+const FormattedSiteName = styled.span`
 	p & {
 		/* font-style: italic; */
 		text-transform: uppercase;
@@ -10,7 +10,7 @@ const SiteName = styled.span`
 	}
 `
 
-export default props => {
+const SiteName: React.FC = props => {
 	const data = useStaticQuery(graphql`
 		query AppName {
 			site {
@@ -21,5 +21,11 @@ export default props => {
 		}
 	`)
 
-	return <SiteName {...props}>{data.site.siteMetadata.name}</SiteName>
+	return (
+		<FormattedSiteName {...props}>
+			{data.site.siteMetadata.name}
+		</FormattedSiteName>
+	)
 }
+
+export default SiteName

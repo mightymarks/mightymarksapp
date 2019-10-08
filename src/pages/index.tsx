@@ -28,7 +28,7 @@ const Header = styled.header`
 `
 
 const Callout = styled.h2`
-	color: ${colors.darkWhite};
+	color: ${colors.blue};
 	font-family: ${fonts.mono};
 	font-size: ${fontSizes[1]};
 	text-transform: uppercase;
@@ -36,7 +36,7 @@ const Callout = styled.h2`
 	font-weight: normal;
 	line-height: ${lineHeights.heading};
 	display: inline-block;
-	background-color: ${colors.blue};
+	background-color: ${colors.yellow};
 	padding: ${space[1]} ${space[2]};
 	margin-left: ${space[1]};
 	-webkit-font-smoothing: antialiased;
@@ -71,6 +71,7 @@ const Hero = styled.h1`
 	word-break: break-word;
 	hyphens: auto;
 	padding-top: 9vw;
+	text-shadow: ${colors.yellow} 4px 4px 0;
 
 	${mobileS} {
 		word-break: normal;
@@ -80,6 +81,24 @@ const Hero = styled.h1`
 	${tablet} {
 		font-size: 5.5vw;
 		padding-top: 6vw;
+	}
+`
+
+const Signup = styled.a`
+	color: ${colors.darkWhite};
+	font-family: ${fonts.sans};
+	font-size: ${fontSizes[2]};
+	line-height: ${lineHeights.text};
+	display: inline-block;
+	background-color: ${colors.blue};
+	padding: ${space[2]} ${space[4]};
+	border-radius: 3px;
+	-webkit-font-smoothing: antialiased;
+	margin-top: 10vw;
+	text-decoration: none;
+
+	&:hover {
+		background-color: ${colors.red};
 	}
 `
 
@@ -158,6 +177,9 @@ const Index = () => (
 					<AppName /> keeps your browser bookmarks{' '}
 					<AvoidWrap>in sync</AvoidWrap>.
 				</Hero>
+				<Signup href="https://mailchi.mp/c3caf0d92fac/mightymarks">
+					Join the waiting list
+				</Signup>
 			</Header>
 			<Main>
 				<Section>
