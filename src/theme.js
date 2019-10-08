@@ -26,5 +26,5 @@ exports.space = [0, 4, 8, 16, 32, 64, 128, 256, 512].map(
 exports.lineHeights = {
 	hero: 1,
 	heading: 1.4,
-	text: 1.65,
+	text: 1.5,
 }

@@ -5,7 +5,6 @@ import React from 'react'
 const FormattedSiteName = styled.span`
 	p & {
 		/* font-style: italic; */
-		text-transform: uppercase;
 		display: inline-block;
 	}
 `

@@ -19,7 +19,7 @@ const Grid = styled.div`
 `
 
 const Header = styled.header`
-	background-color: ${colors.darkWhite};
+	background-color: ${colors.white};
 	padding: 10vw;
 
 	${tablet} {
@@ -38,7 +38,7 @@ const Callout = styled.h2`
 	display: inline-block;
 	background-color: ${colors.yellow};
 	padding: ${space[1]} ${space[2]};
-	margin-left: ${space[1]};
+
 	-webkit-font-smoothing: antialiased;
 
 	${tablet} {
@@ -71,7 +71,7 @@ const Hero = styled.h1`
 	word-break: break-word;
 	hyphens: auto;
 	padding-top: 9vw;
-	text-shadow: ${colors.yellow} 4px 4px 0;
+	text-shadow: ${colors.yellow} 2px 2px 0;
 
 	${mobileS} {
 		word-break: normal;
@@ -94,11 +94,15 @@ const Signup = styled.a`
 	padding: ${space[2]} ${space[4]};
 	border-radius: 3px;
 	-webkit-font-smoothing: antialiased;
-	margin-top: 10vw;
+	margin: 10vw 0 2vw;
 	text-decoration: none;
 
 	&:hover {
 		background-color: ${colors.red};
+	}
+
+	${tablet} {
+		margin-top: 6vw;
 	}
 `
 
@@ -114,10 +118,9 @@ const Main = styled.main`
 
 const Section = styled.section`
 	padding-bottom: ${space[1]};
-	color: ${colors.darkWhite};
 
 	${mobileS} {
-		padding-bottom: ${space[4]};
+		padding-bottom: ${space[3]};
 	}
 
 	&:first-child {
@@ -139,10 +142,9 @@ const Heading = styled.h3`
 	color: ${colors.red};
 	font-size: ${fontSizes[1]};
 	text-transform: uppercase;
-	letter-spacing: 0.03em;
+	letter-spacing: 0.04em;
 	display: inline-block;
-	-webkit-font-smoothing: auto;
-	margin-bottom: 0.35em;
+	line-height: ${lineHeights.text};
 
 	${tablet} {
 		font-size: ${fontSizes[0]};
@@ -150,15 +152,18 @@ const Heading = styled.h3`
 `
 
 const Text = styled.p`
+	color: ${colors.darkWhite};
 	font-family: ${fonts.sans};
 	font-size: ${fontSizes[2]};
 	margin-bottom: ${space[3]};
 	font-weight: 400;
 	line-height: ${lineHeights.text};
 	max-width: 50ch;
+	letter-spacing: 0.02em;
 
 	${tablet} {
 		font-size: ${fontSizes[1]};
+		/* font-weight: 200; */
 	}
 
 	em {
@@ -186,27 +191,29 @@ const Index = () => (
 					<Heading>Every bookmark, everywhere</Heading>
 					<Text>
 						<AppName /> syncs your browser bookmarks / favorites between{' '}
-						<em>Chrome</em>, <em>Firefox</em>, <s>Safari</s>*, <em>Edge</em>,{' '}
-						<em>Opera</em>, <em>Brave</em> and more.
+						<em>Chrome</em>, <em>Firefox</em>, <em>Edge</em>, <em>Opera</em>,{' '}
+						<em>Brave</em> and more.
 					</Text>
 					<Text>
 						You can access them on the web, too (which doubles as{' '}
-						<em>a handy homepage for Safari</em>, for now).
+						<em>a handy homepage for Safari</em>, for now*).
 					</Text>
 				</Section>
 				<Section>
-					<Heading>$1.99/month</Heading>
+					<Heading>Price</Heading>
 					<Text>
 						The first month is free, during which you can cancel at any time
 						without charge.
 					</Text>
-					<Text>After that, $1.99 per month.</Text>
+					<Text>
+						After that, <em>it‘s $1.99 per month</em>.
+					</Text>
 				</Section>
 				<Section>
-					<Heading>Your data is yours</Heading>
+					<Heading>Privacy</Heading>
 					<Text>
-						We don’t monitor your bookmarks for anything other than changes that
-						we need to sync.
+						Your data is yours. We don’t monitor your bookmarks for anything
+						other than changes that we need to sync.
 					</Text>
 					<Text>
 						We don’t tailor content, generate recommendations or target ads. We
@@ -217,13 +224,12 @@ const Index = () => (
 				<Section>
 					<Heading>We plan on sticking around!</Heading>
 					<Text>
-						<i>Xmarks</i> was extremely useful. We really hope that <AppName />{' '}
-						can be a replacement for <i>Xmarks</i>, but to do that we need to
-						stay in business.
+						Xmarks was super useful. We really hope that <AppName /> can be a
+						replacement for Xmarks, but to do that we need to keep going!
 					</Text>
 					<Text>
-						Hence – in the interests of continued service and development – the
-						small monthly charge.
+						Hence – in the interest of continued service and development – the
+						small monthly charge 💸.
 					</Text>
 				</Section>
 			</Main>
