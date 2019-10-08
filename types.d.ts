@@ -1,12 +1,14 @@
 declare module '*.png' {
-	export default string
+	const content: string
+	export default content
 }
 
 declare module '*.woff2' {
-	export default string
+	const content: string
+	export default content
 }
 
 declare module '*.svg' {
-	let SVG: (props: React.SVGProps<SVGSVGElement>) => JSX.Element
-	export default SVG
+	const content: (props: React.SVGProps<SVGSVGElement>) => JSX.Element
+	export default content
 }
