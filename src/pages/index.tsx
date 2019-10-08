@@ -51,12 +51,13 @@ const ShootingStar = styled(ShootingStarSVG)`
 	width: 10vw;
 	height: auto;
 	position: absolute;
-	right: 0;
-	top: 2vw;
+	right: 4vw;
+	top: -1vw;
 
 	${tablet} {
-		top: 3.5vw;
-		width: 3vw;
+		top: 1vw;
+		right: 0;
+		width: 5vw;
 	}
 `
 
@@ -131,7 +132,7 @@ const Heading = styled.h3`
 
 const Text = styled.p`
 	font-family: ${fonts.sans};
-	font-size: ${fontSizes[3]};
+	font-size: ${fontSizes[2]};
 	margin-bottom: ${space[3]};
 	font-weight: 400;
 	line-height: ${lineHeights.text};
