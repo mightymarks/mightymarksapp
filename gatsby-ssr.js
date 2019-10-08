@@ -1,14 +1,17 @@
-import sortBy from 'lodash.sortby'
-
 export const onPreRenderHTML = ({
 	getHeadComponents,
 	replaceHeadComponents,
 }) => {
 	const headComponents = getHeadComponents()
 
-	const sortedHeadComponents = sortBy(headComponents, [
-		c => c.key === 'linaria-critical-css',
-	])
+	headComponents.sort((x, y) => {
+		if (x.key === 'linaria-critical-css') {
+			return 1
+		} else if (y.key === 'linaria-critical-css') {
+			return -1
+		}
+		return 0
+	})
 
-	replaceHeadComponents(sortedHeadComponents)
+	replaceHeadComponents(headComponents)
 }
