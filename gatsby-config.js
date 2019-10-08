@@ -46,6 +46,7 @@ module.exports = {
 			resolve: 'gatsby-plugin-webpack-bundle-analyzer',
 			options: {
 				analyzerMode: 'static',
+				defaultSizes: 'gzip',
 				openAnalyzer: false,
 				production: true,
 				disable: process.env.NODE_ENV !== 'production',
@@ -77,5 +78,6 @@ module.exports = {
 		'gatsby-plugin-preact',
 		'gatsby-plugin-linaria',
 		'gatsby-plugin-netlify',
+		`gatsby-plugin-preload-fonts`,
 	],
 }
