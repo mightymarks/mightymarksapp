@@ -2,7 +2,6 @@ import { styled } from 'linaria/react'
 import React from 'react'
 import { tablet } from '../mq'
 import { colors, fonts } from '../theme'
-import AvoidWrap from './util/AvoidWrap'
 
 const StyledFooter = styled.footer`
 	color: ${colors.red};
@@ -33,12 +32,12 @@ const Link = styled.a`
 
 const Footer: React.FC = props => (
 	<StyledFooter {...props}>
-		<AvoidWrap>
+		<p>
 			Copyright © {new Date().getFullYear()}{' '}
 			<Link href="https://deeppink.co">Deep Pink Ltd.</Link> All rights
 			reserved.
-		</AvoidWrap>
-		<AvoidWrap>
+		</p>
+		<p>
 			Say hello at{' '}
 			<Link href="https://twitter.com/mightymarksapp">@mightymarksapp</Link>.
 			Read our{' '}
@@ -46,7 +45,7 @@ const Footer: React.FC = props => (
 				Privacy Policy
 			</Link>
 			.
-		</AvoidWrap>
+		</p>
 	</StyledFooter>
 )
 
