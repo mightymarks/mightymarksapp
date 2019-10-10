@@ -122,7 +122,7 @@ const Section = styled.section`
 	padding-bottom: ${space[1]};
 
 	${mobileS} {
-		padding-bottom: ${space[3]};
+		padding-bottom: ${space[4]};
 	}
 
 	&:first-child {
