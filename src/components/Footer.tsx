@@ -11,6 +11,9 @@ const StyledFooter = styled.footer`
 	background-color: ${colors.black};
 	padding: 0 10vw 10vw;
 	-webkit-font-smoothing: antialiased;
+	display: flex;
+	justify-content: flex-end;
+	flex-direction: column;
 
 	${tablet} {
 		padding: 0 7vw 6vw;
@@ -32,15 +35,12 @@ const Footer: React.FC = props => (
 	<StyledFooter {...props}>
 		<AvoidWrap>
 			Copyright © {new Date().getFullYear()}{' '}
-			<Link href="https://deeppink.co">Deep Pink Ltd.</Link>
-		</AvoidWrap>{' '}
-		<AvoidWrap>All rights reserved.</AvoidWrap> <br />
+			<Link href="https://deeppink.co">Deep Pink Ltd.</Link> All rights
+			reserved.
+		</AvoidWrap>
 		<AvoidWrap>
 			Say hello at{' '}
 			<Link href="https://twitter.com/mightymarksapp">@mightymarksapp</Link>.
-		</AvoidWrap>{' '}
-		<AvoidWrap>
-			{' '}
 			Read our{' '}
 			<Link href="https://www.iubenda.com/privacy-policy/98977183">
 				Privacy Policy
