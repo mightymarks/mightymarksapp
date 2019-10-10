@@ -199,7 +199,7 @@ const Index = () => (
 						<em>Brave</em> and more.
 					</Text>
 					<Text>
-						You can access them on the web, too (which doubles as{' '}
+						You can access your bookmarks on the web, too (which doubles as{' '}
 						<em>a handy homepage for Safari</em>, for now*).
 					</Text>
 				</Section>
