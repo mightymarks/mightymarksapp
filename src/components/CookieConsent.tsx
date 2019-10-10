@@ -1,6 +1,5 @@
-import useCookie from '@devhammed/use-cookie'
 import { styled } from 'linaria/react'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { colors, fonts, fontSizes, space } from '../theme'
 
 const ConsentWrapper = styled.div`
@@ -62,12 +61,30 @@ const CloseButton = styled.button`
 	}
 `
 
+const COOKIE_NAME = 'cookie-consent'
+
 const CookieConsent = () => {
-	const [consent, setConsent] = useCookie('cookie-consent', false)
+	const [requestConsent, setRequestConsent] = useState(true)
+	const [userConsented, setUserConsented] = useState(false)
 
-	if (consent) return null
+	const setCookie = () => {
+		document.cookie = `${COOKIE_NAME}=true; max-age=${60 * 60 * 24 * 365}`
+		setUserConsented(true)
+	}
 
-	return (
+	useEffect(
+		() =>
+			setRequestConsent(
+				Boolean(
+					document.cookie
+						.split(';')
+						.filter(item => item.includes(`${COOKIE_NAME}=true`)).length,
+				),
+			),
+		[userConsented],
+	)
+
+	return requestConsent ? null : (
 		<ConsentWrapper>
 			<h4>Let’s get this out of the way…</h4>
 			<p>
@@ -82,14 +99,7 @@ const CookieConsent = () => {
 				</a>
 				.
 			</p>
-			<CloseButton
-				tabIndex={0}
-				onClick={e =>
-					setConsent(true, {
-						maxAge: 60 * 60 * 24 * 365,
-					})
-				}
-			>
+			<CloseButton tabIndex={0} onClick={setCookie}>
 				Accept cookies
 			</CloseButton>
 		</ConsentWrapper>
