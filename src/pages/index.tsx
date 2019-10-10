@@ -1,6 +1,7 @@
 import { styled } from 'linaria/react'
 import React from 'react'
 import AppName from '../components/AppName'
+import Footer from '../components/Footer'
 import Layout from '../components/Layout'
 import AvoidWrap from '../components/util/AvoidWrap'
 import ShootingStarSVG from '../images/shooting-star.svg'
@@ -8,19 +9,20 @@ import { mobileS, tablet } from '../mq'
 import { colors, fonts, fontSizes, lineHeights, space } from '../theme'
 
 const Grid = styled.div`
+	min-height: 100vh;
 	position: absolute;
-	height: 100%;
-	display: grid;
-	grid-template-columns: 1fr;
 
 	${tablet} {
+		display: grid;
 		grid-template-columns: 1fr 1fr;
 	}
 `
 
 const Header = styled.header`
-	background-color: ${colors.white};
+	background-color: ${colors.darkWhite};
 	padding: 10vw;
+	grid-column: 1 / 2;
+	grid-row: 1 / 3;
 
 	${tablet} {
 		padding: 7vw;
@@ -142,7 +144,7 @@ const Heading = styled.h3`
 	color: ${colors.red};
 	font-size: ${fontSizes[1]};
 	text-transform: uppercase;
-	letter-spacing: 0.04em;
+	letter-spacing: 0.02em;
 	display: inline-block;
 	line-height: ${lineHeights.text};
 
@@ -155,11 +157,13 @@ const Text = styled.p`
 	color: ${colors.darkWhite};
 	font-family: ${fonts.sans};
 	font-size: ${fontSizes[2]};
-	margin-bottom: ${space[3]};
 	font-weight: 400;
 	line-height: ${lineHeights.text};
 	max-width: 50ch;
-	letter-spacing: 0.02em;
+
+	& + & {
+		margin-top: ${space[3]};
+	}
 
 	${tablet} {
 		font-size: ${fontSizes[1]};
@@ -233,6 +237,7 @@ const Index = () => (
 					</Text>
 				</Section>
 			</Main>
+			<Footer />
 		</Grid>
 	</Layout>
 )
