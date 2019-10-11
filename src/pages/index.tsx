@@ -4,6 +4,7 @@ import AppName from '../components/AppName'
 import Footer from '../components/Footer'
 import Layout from '../components/Layout'
 import AvoidWrap from '../components/util/AvoidWrap'
+import GitHubSVG from '../images/GitHub.svg'
 import ShootingStarSVG from '../images/shooting-star.svg'
 import { mobileS, tablet } from '../mq'
 import { colors, fonts, fontSizes, lineHeights, space } from '../theme'
@@ -93,11 +94,13 @@ const Signup = styled.a`
 	line-height: ${lineHeights.text};
 	display: inline-block;
 	background-color: ${colors.blue};
-	padding: ${space[2]} ${space[4]};
+	padding: ${space[2]} ${space[3]};
 	border-radius: 3px;
 	-webkit-font-smoothing: antialiased;
 	margin: 10vw 0 2vw;
 	text-decoration: none;
+	display: inline-flex;
+	align-items: center;
 
 	&:hover {
 		background-color: ${colors.red};
@@ -106,6 +109,10 @@ const Signup = styled.a`
 	${tablet} {
 		margin-top: 6vw;
 	}
+`
+
+const GitHubIcon = styled(GitHubSVG)`
+	margin-left: 1ch;
 `
 
 const Main = styled.main`
@@ -187,7 +194,7 @@ const Index = () => (
 					<AvoidWrap>in sync</AvoidWrap>.
 				</Hero>
 				<Signup href="https://mailchi.mp/c3caf0d92fac/mightymarks">
-					Join the waiting list
+					Join the waiting list with GitHub <GitHubIcon />
 				</Signup>
 			</Header>
 			<Main>
