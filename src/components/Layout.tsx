@@ -7,8 +7,8 @@ import SEO from './SEO'
 const Layout: React.FC = ({ children, ...props }) => (
 	<>
 		<SEO />
-		{children}
 		<CookieConsent />
+		{children}
 	</>
 )
 
