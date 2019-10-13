@@ -47,3 +47,8 @@ export const signIn = () =>
 	getFirebase()
 		.auth()
 		.signInWithPopup(githubAuthProvider)
+
+export const removeUser = () =>
+	getFirebase()
+		.auth()
+		.currentUser.delete()

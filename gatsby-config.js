@@ -1,3 +1,4 @@
+require('dotenv').config()
 const { colors } = require('./src/theme')
 
 const siteMetadata = {
