@@ -20,6 +20,6 @@ describe('The Home Page', function() {
 					})
 			})
 
-		cy.percySnapshot()
+		// cy.percySnapshot()
 	})
 })
