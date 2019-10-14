@@ -4,7 +4,7 @@ describe('The Home Page', function() {
 	it('successfully loads', function() {
 		cy.visit('/')
 
-		cy.wait(300)
+		cy.wait(1000)
 
 		cy.contains('Join the waiting list')
 
