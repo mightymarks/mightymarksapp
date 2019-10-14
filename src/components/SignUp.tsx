@@ -21,10 +21,6 @@ const User = styled.div`
 	font-size: ${fontSizes[1]};
 	position: relative;
 
-	p {
-		color: ${colors.grey[4]};
-	}
-
 	${tablet} {
 		margin-top: 6vw;
 	}
@@ -57,7 +53,7 @@ const Error: React.FC<{ error: firebase.auth.Error }> = ({ error }) => (
 )
 
 const SignOut = styled.div`
-	color: ${colors.black};
+	color: ${colors.grey[8]};
 
 	em {
 		font-style: normal;
@@ -99,7 +95,7 @@ const SignUp: React.FC = () => {
 					<br />
 					<Button
 						onClick={signOut}
-						color={colors.grey[4]}
+						color={colors.grey[8]}
 						hollow
 						small
 						focusColor={colors.blue}
