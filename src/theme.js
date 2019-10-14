@@ -6,6 +6,18 @@ exports.colors = {
 	blue: '#3E29EB',
 	darkWhite: '#F9F9F7',
 	white: '#FFFFFF',
+	grey: [
+		'#faf9f9',
+		'#f0eced',
+		'#e5dee0',
+		'#dad0d3',
+		'#cec0c3',
+		'#c0aeb3',
+		'#b09a9f',
+		'#9d8289',
+		'#80646c',
+		'#4b3b3f',
+	],
 }
 
 exports.fonts = {

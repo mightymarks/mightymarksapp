@@ -5,6 +5,8 @@
 	"main": "index.js",
 	"repository": "https://github.com/mightymarks/mightymarks.app.git",
 	"author": "Alex Sanders <a@snd.rs>",
+	"license": "SEE LICENSE IN LICENSE.txt",
+	"private": true,
 	"scripts": {
 		"test": "echo 'should add some tests'",
 		"build": "yarn clean && gatsby build",
@@ -15,8 +17,11 @@
 	"dependencies": {
 		"@babel/core": "7.6.2",
 		"@types/react-helmet": "5.0.11",
+		"@types/react-transition-group": "4.2.3",
+		"dotenv": "8.1.0",
 		"eslint": "6.5.1",
 		"eslint-plugin-flowtype": "2.50.3",
+		"firebase": "7.2.0",
 		"gatsby": "2.15.29",
 		"gatsby-plugin-canonical-urls": "2.1.10",
 		"gatsby-plugin-google-analytics": "2.1.20",
@@ -36,6 +41,7 @@
 		"react": "16.10.2",
 		"react-dom": "16.10.2",
 		"react-helmet": "5.2.1",
+		"react-transition-group": "4.3.0",
 		"typeface-roboto-mono": "0.0.75",
 		"typescript": "3.6.3",
 		"webpack": "4.41.0"

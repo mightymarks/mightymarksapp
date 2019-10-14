@@ -38,11 +38,18 @@ const Footer: React.FC = props => (
 			reserved.
 		</p>
 		<p>
-			Say hello at{' '}
-			<Link href="https://twitter.com/mightymarksapp">@mightymarksapp</Link>.
+			Contact us at{' '}
+			<Link href="https://twitter.com/mightymarksapp">@mightymarksapp</Link> or{' '}
+			<Link href="mailto:hello@mightymarks.app">hello@mightymarks.app</Link>.
+		</p>
+		<p>
 			Read our{' '}
 			<Link href="https://www.iubenda.com/privacy-policy/98977183">
 				Privacy Policy
+			</Link>{' '}
+			or{' '}
+			<Link href="https://www.iubenda.com/privacy-policy/98977183/cookie-policy">
+				Cookie Policy
 			</Link>
 			.
 		</p>
