@@ -6,7 +6,7 @@ import { CSSTransitionProps } from 'react-transition-group/CSSTransition'
 import { tablet } from '../mq'
 import { colors, fonts, fontSizes } from '../theme'
 import Button from './Button'
-import { signIn, signOut, useAuthState } from './Firebase'
+import { signIn, useAuthState } from './Firebase'
 import GitHubIcon from './GitHubIcon'
 
 const TRANSITION_DURATION = 200
@@ -20,6 +20,7 @@ const User = styled.div`
 	font-family: ${fonts.sans};
 	font-size: ${fontSizes[1]};
 	position: relative;
+	height: 2rem;
 
 	${tablet} {
 		margin-top: 6vw;
@@ -89,18 +90,8 @@ const SignUp: React.FC = () => {
 			<Transition in={!loading && !!user}>
 				<SignOut className={transitionCSS}>
 					<p>
-						You have joined the waiting list as <em>{user && user.email}</em>.
+						You are on the waiting list as <em>{user && user.email}</em>.
 					</p>
-					<br />
-					<Button
-						onClick={signOut}
-						color={colors.grey[8]}
-						hollow
-						small
-						focusColor={colors.blue}
-					>
-						Sign out
-					</Button>
 				</SignOut>
 			</Transition>
 		</User>
