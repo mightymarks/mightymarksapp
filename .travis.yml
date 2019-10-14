@@ -4,3 +4,9 @@ cache:
 branches:
     only:
         - 'master'
+install:
+    - yarn install --frozen-lockfile
+script:
+    - yarn test --ci --runInBand
+    - yarn build
+    - yarn start-server-and-test 'gatsby serve' 9000 'percy exec -- cypress run'

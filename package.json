@@ -1,23 +1,27 @@
 {
 	"name": "mightymarks.app",
 	"version": "0.1.0",
-	"description": "Mighty Marks website",
-	"main": "index.js",
-	"repository": "https://github.com/mightymarks/mightymarks.app.git",
-	"author": "Alex Sanders <a@snd.rs>",
-	"license": "SEE LICENSE IN LICENSE.txt",
 	"private": true,
+	"description": "Mighty Marks website",
+	"repository": "https://github.com/mightymarks/mightymarks.app.git",
+	"license": "SEE LICENSE IN LICENSE.txt",
+	"author": "Alex Sanders <a@snd.rs>",
+	"main": "index.js",
 	"scripts": {
-		"test": "echo 'should add some tests'",
 		"build": "yarn clean && gatsby build",
-		"serve": "yarn clean && yarn build && gatsby serve",
+		"clean": "rm -rf ./public",
+		"cypress": "cypress open",
 		"dev": "gatsby develop",
-		"clean": "rm -rf ./public"
+		"serve": "yarn clean && yarn build && gatsby serve",
+		"test": "echo 'should add some tests'"
 	},
 	"dependencies": {
 		"@babel/core": "7.6.2",
+		"@percy/cypress": "2.2.0",
+		"@types/jest": "24.0.18",
 		"@types/react-helmet": "5.0.11",
 		"@types/react-transition-group": "4.2.3",
+		"cypress": "3.4.1",
 		"dotenv": "8.1.0",
 		"eslint": "6.5.1",
 		"eslint-plugin-flowtype": "2.50.3",
@@ -36,12 +40,16 @@
 		"gatsby-plugin-sitemap": "2.2.16",
 		"gatsby-plugin-typescript": "2.1.11",
 		"gatsby-plugin-webpack-bundle-analyzer": "1.0.5",
+		"jest": "24.9.0",
+		"jest-junit": "8.0.0",
 		"linaria": "1.3.1",
 		"preact": "10.0.0",
 		"react": "16.10.2",
 		"react-dom": "16.10.2",
 		"react-helmet": "5.2.1",
 		"react-transition-group": "4.3.0",
+		"start-server-and-test": "1.10.5",
+		"ts-jest": "24.1.0",
 		"typeface-roboto-mono": "0.0.75",
 		"typescript": "3.6.3",
 		"webpack": "4.41.0"
@@ -55,10 +63,5 @@
 		"major": {
 			"automerge": false
 		}
-	},
-	"browserslist": [
-		"chrome >= 55",
-		"firefox >= 52",
-		"> 1%"
-	]
+	}
 }
