@@ -1,6 +1,6 @@
 import { css } from 'linaria'
 import { styled } from 'linaria/react'
-import React, { useState } from 'react'
+import React from 'react'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import { CSSTransitionProps } from 'react-transition-group/CSSTransition'
 import { tablet } from '../mq'
@@ -45,10 +45,10 @@ const User: React.FC<Partial<CSSTransitionProps>> = styled.div`
 	}
 `
 
-const SignedIn = styled.div`
+const SignedIn = styled.p`
 	font-family: ${fonts.sans};
 	font-size: ${fontSizes[1]};
-	color: ${colors.black};
+	color: ${colors.grey[7]};
 
 	em {
 		font-style: normal;
@@ -88,11 +88,10 @@ const SignUp: React.FC = () => {
 					>
 						{user ? (
 							<SignedIn>
-								<p>
-									You are on the waiting list as <em>{user && user.email}</em>.
-								</p>
+								You are on the waiting list as <em>{user && user.email}</em>.
 								<br />
-								<Button onClick={signOut} color={colors.blue} hollow small>
+								<br />
+								<Button onClick={signOut} color={colors.blue} small hollow>
 									Sign out
 								</Button>
 							</SignedIn>
