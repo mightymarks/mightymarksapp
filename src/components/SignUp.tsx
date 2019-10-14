@@ -89,8 +89,7 @@ const SignUp: React.FC = () => {
 			<Transition in={!loading && !!user}>
 				<SignOut className={transitionCSS}>
 					<p>
-						You are signed up to the waiting list as{' '}
-						<em>{user && user.email}</em>.
+						You have joined the waiting list as <em>{user && user.email}</em>.
 					</p>
 					<br />
 					<Button
