@@ -1,14 +1,15 @@
 import { styled } from 'linaria/react'
-import React from 'react'
 import { colors, fonts, fontSizes, lineHeights, space } from '../theme'
 
-const StyledButton = styled.button<{
-	color: string
-	focusColor: string
-	textColor: string
-	hollow: boolean
-	small: boolean
-}>`
+interface Button extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+	color?: string
+	focusColor?: string
+	textColor?: string
+	hollow?: boolean
+	small?: boolean
+}
+
+const Button = styled.button<Button>`
 	font-family: ${fonts.sans};
 	line-height: ${lineHeights.text};
 	display: inline-block;
@@ -26,7 +27,7 @@ const StyledButton = styled.button<{
 	background-color: ${props => (props.hollow ? 'transparent' : props.color)};
 
 	padding: ${props =>
-		props.small ? `${space[0]} ${space[2]}` : `${space[2]} ${space[3]}`};
+		props.small ? `${space[1]} ${space[2]}` : `${space[2]} ${space[3]}`};
 	font-size: ${props => (props.small ? fontSizes[0] : fontSizes[2])};
 
 	&:hover {
@@ -48,28 +49,12 @@ const StyledButton = styled.button<{
 	}
 `
 
-const Button: React.FC<{
-	color?: string
-	focusColor?: string
-	textColor?: string
-	hollow?: boolean
-	small?: boolean
-}> = ({
-	color = colors.black,
-	focusColor = colors.red,
-	textColor = color === colors.darkWhite ? colors.black : colors.darkWhite,
-	hollow = false,
-	small = false,
-	...props
-}) => (
-	<StyledButton
-		color={color}
-		focusColor={focusColor}
-		textColor={textColor}
-		hollow={hollow}
-		small={small}
-		{...props}
-	/>
-)
+Button.defaultProps = {
+	color: colors.black,
+	focusColor: colors.red,
+	textColor: colors.darkWhite,
+	hollow: false,
+	small: false,
+}
 
 export default Button

@@ -38,7 +38,7 @@ const Footer: React.FC = props => (
 			reserved.
 		</p>
 		<p>
-			Say hello at{' '}
+			Contact us at{' '}
 			<Link href="https://twitter.com/mightymarksapp">@mightymarksapp</Link> or{' '}
 			<Link href="mailto:hello@mightymarks.app">hello@mightymarks.app</Link>.
 		</p>
