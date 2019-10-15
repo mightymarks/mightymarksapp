@@ -24,6 +24,7 @@ const SignUp: React.FC = () => {
 
 	return (
 		<div>
+			does this even render?
 			{user ? (
 				<p>
 					You are on the waiting list as <em>{user && user.email}</em>.
