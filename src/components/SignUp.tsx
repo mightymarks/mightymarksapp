@@ -82,19 +82,11 @@ const SignUp: React.FC = () => {
 		!loading && (
 			<User>
 				{user ? (
-					<SignedIn>
+					<p>
 						You are on the waiting list as <em>{user && user.email}</em>.
-						<br />
-						<br />
-						<Button onClick={signOut} color={colors.blue} small hollow>
-							Sign out
-						</Button>
-					</SignedIn>
+					</p>
 				) : (
-					<Button onClick={signIn} color={colors.blue}>
-						Join the waiting list
-						<GitHubIcon className={iconStyles} />
-					</Button>
+					<p>Join the waiting list</p>
 				)}
 			</User>
 		)
