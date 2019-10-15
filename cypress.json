@@ -6,5 +6,6 @@
 	"reporterOptions": {
 		"mochaFile": "test-results/cypress/results.xml"
 	},
-	"projectId": "7i7qot"
+	"projectId": "7i7qot",
+	"browser": "chrome"
 }
