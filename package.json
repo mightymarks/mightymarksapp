@@ -16,9 +16,9 @@
 		"serve": "yarn clean && yarn build && gatsby serve",
 		"serve:ci": "gatsby serve",
 		"test": "echo 'should add some tests'",
-		"e2e": "CYPRESS_SUPPORT=y start-server-and-test serve 9000 'cypress run'",
-		"e2e:dev": "CYPRESS_SUPPORT=y cypress open --config baseUrl=http://localhost:8000",
-		"e2e:ci": "CYPRESS_SUPPORT=y start-server-and-test serve:ci 9000 'percy exec -- cypress run --record'"
+		"e2e": "start-server-and-test serve 9000 'cypress run'",
+		"e2e:dev": "cypress open --config baseUrl=http://localhost:8000",
+		"e2e:ci": "start-server-and-test serve:ci 9000 'cypress run --record'"
 	},
 	"dependencies": {
 		"@babel/core": "7.6.4",
