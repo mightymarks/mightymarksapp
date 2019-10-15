@@ -8,12 +8,12 @@ describe('Home Page', function() {
 		cy.get('h4')
 			.contains('Let’s get this out of the way…')
 			.parent()
-			.then($el => {
-				expect($el).to.be.visible
-				cy.get('button', { withinSubject: $el })
+			.within($banner => {
+				expect($banner).to.be.visible
+				cy.get('button')
 					.click()
 					.then(() => {
-						expect($el).not.to.exist
+						expect($banner).to.be.hidden
 					})
 			})
 	})
