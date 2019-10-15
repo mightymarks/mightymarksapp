@@ -13,7 +13,7 @@ const Error = styled.p`
 const SignUp: React.FC = () => {
 	const [user, loading, error] = useAuthState()
 
-	console.log({ user, loading, error })
+	if (loading) return null
 
 	if (error)
 		return (
@@ -23,17 +23,15 @@ const SignUp: React.FC = () => {
 		)
 
 	return (
-		!loading && (
-			<User>
-				{user ? (
-					<p>
-						You are on the waiting list as <em>{user && user.email}</em>.
-					</p>
-				) : (
-					<p>Join the waiting list</p>
-				)}
-			</User>
-		)
+		<User>
+			{user ? (
+				<p>
+					You are on the waiting list as <em>{user && user.email}</em>.
+				</p>
+			) : (
+				<p>Join the waiting list</p>
+			)}
+		</User>
 	)
 }
 
