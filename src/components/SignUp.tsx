@@ -23,7 +23,7 @@ const SignUp: React.FC = () => {
 		)
 
 	return (
-		<User>
+		<div>
 			{user ? (
 				<p>
 					You are on the waiting list as <em>{user && user.email}</em>.
@@ -31,7 +31,7 @@ const SignUp: React.FC = () => {
 			) : (
 				<p>Join the waiting list</p>
 			)}
-		</User>
+		</div>
 	)
 }
 
