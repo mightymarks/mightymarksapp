@@ -1,17 +1,10 @@
 import { styled } from 'linaria/react'
 import React from 'react'
 import { CSSTransitionProps } from 'react-transition-group/CSSTransition'
-import { tablet } from '../mq'
 import { colors } from '../theme'
 import { useAuthState } from './Firebase'
 
-const User: React.FC<Partial<CSSTransitionProps>> = styled.div`
-	margin: 10vw 0 2vw;
-
-	${tablet} {
-		margin-top: 6vw;
-	}
-`
+const User: React.FC<Partial<CSSTransitionProps>> = styled.div``
 
 const Error = styled.p`
 	color: ${colors.red};
