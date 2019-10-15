@@ -4,5 +4,6 @@
 	"reporter": "junit",
 	"reporterOptions": {
 		"mochaFile": "test-results/cypress/results.xml"
-	}
+	},
+	"projectId": "7i7qot"
 }
