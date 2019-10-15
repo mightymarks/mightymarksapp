@@ -13,7 +13,8 @@
 		"cypress": "cypress open",
 		"dev": "gatsby develop",
 		"serve": "yarn clean && yarn build && gatsby serve",
-		"test": "echo 'should add some tests'"
+		"test": "echo 'should add some tests'",
+		"e2e": "start-server-and-test serve 9000 'percy exec -- cypress run'"
 	},
 	"dependencies": {
 		"@babel/core": "7.6.2",
