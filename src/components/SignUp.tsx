@@ -81,30 +81,21 @@ const SignUp: React.FC = () => {
 	return (
 		!loading && (
 			<User>
-				<SwitchTransition>
-					<CSSTransition
-						className={transitionCSS}
-						timeout={TRANSITION_DURATION}
-						key={user ? 'hasUser' : 'noUser'}
-						appear
-					>
-						{user ? (
-							<SignedIn>
-								You are on the waiting list as <em>{user && user.email}</em>.
-								<br />
-								<br />
-								<Button onClick={signOut} color={colors.blue} small hollow>
-									Sign out
-								</Button>
-							</SignedIn>
-						) : (
-							<Button onClick={signIn} color={colors.blue}>
-								Join the waiting list
-								<GitHubIcon className={iconStyles} />
-							</Button>
-						)}
-					</CSSTransition>
-				</SwitchTransition>
+				{user ? (
+					<SignedIn>
+						You are on the waiting list as <em>{user && user.email}</em>.
+						<br />
+						<br />
+						<Button onClick={signOut} color={colors.blue} small hollow>
+							Sign out
+						</Button>
+					</SignedIn>
+				) : (
+					<Button onClick={signIn} color={colors.blue}>
+						Join the waiting list
+						<GitHubIcon className={iconStyles} />
+					</Button>
+				)}
 			</User>
 		)
 	)

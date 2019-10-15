@@ -11,9 +11,9 @@ describe('Home Page', function() {
 
 	it('can dismiss the cookie banner', () => {
 		cy.contains('Accept cookies')
-			.click({ force: true })
-			.should('not.exist')
-		cy.contains('Let’s get this out of the way…').should('not.exist')
+		// .click({ force: true })
+		// .should('not.exist')
+		// cy.contains('Let’s get this out of the way…').should('not.exist')
 	})
 
 	it('shows the sign up button', () => {
@@ -22,5 +22,5 @@ describe('Home Page', function() {
 			.should('be.visible')
 	})
 
-	it('has no visual regressions', () => cy.percySnapshot())
+	// it('has no visual regressions', () => cy.percySnapshot())
 })
