@@ -16,8 +16,9 @@
 		"serve": "yarn clean && yarn build && gatsby serve",
 		"serve:ci": "gatsby serve",
 		"test": "echo 'should add some tests'",
-		"e2e": "start-server-and-test serve 9000 'cypress run'",
-		"e2e:ci": "start-server-and-test serve:ci 9000 'percy exec -- cypress run --record'"
+		"e2e": "CYPRESS_SUPPORT=y start-server-and-test serve 9000 'cypress run'",
+		"e2e:dev": "CYPRESS_SUPPORT=y cypress open --config baseUrl=http://localhost:8000",
+		"e2e:ci": "CYPRESS_SUPPORT=y start-server-and-test serve:ci 9000 'percy exec -- cypress run --record'"
 	},
 	"dependencies": {
 		"@babel/core": "7.6.2",
@@ -31,6 +32,7 @@
 		"eslint-plugin-flowtype": "2.50.3",
 		"firebase": "7.2.0",
 		"gatsby": "2.15.29",
+		"gatsby-cypress": "0.2.14",
 		"gatsby-plugin-canonical-urls": "2.1.10",
 		"gatsby-plugin-google-analytics": "2.1.20",
 		"gatsby-plugin-linaria": "1.2.2",

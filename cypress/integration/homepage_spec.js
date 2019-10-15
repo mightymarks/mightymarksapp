@@ -1,8 +1,11 @@
 /// <reference types="Cypress" />
 
 describe('Home Page', function() {
-	beforeEach(() => indexedDB.deleteDatabase('firebaseLocalStorageDb'))
-	beforeEach(() => cy.visit('/'))
+	beforeEach(() => {
+		cy.visit('/')
+		cy.waitForRouteChange()
+		indexedDB.deleteDatabase('firebaseLocalStorageDb')
+	})
 
 	it('shows the cookie banner', () =>
 		cy.contains('Let’s get this out of the way…'))
