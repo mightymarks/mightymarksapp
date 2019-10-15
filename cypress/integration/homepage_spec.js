@@ -7,7 +7,7 @@ describe('Home Page', function() {
 	})
 
 	it('shows the cookie banner', () =>
-		cy.contains('Let’s get this out of the way…'))
+		cy.contains('Let’s get this out of the way…').should('be.visible'))
 
 	it('can dismiss the cookie banner', () => {
 		cy.contains('Accept cookies')
