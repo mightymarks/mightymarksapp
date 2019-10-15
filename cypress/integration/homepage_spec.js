@@ -4,7 +4,7 @@ describe('The Home Page', function() {
 	it('successfully loads', function() {
 		cy.visit('/')
 
-		cy.wait(5000).then(() => {
+		cy.wait(60000).then(() => {
 			cy.contains('Join the waiting list')
 
 			cy.get('h4')
