@@ -14,7 +14,8 @@
 		"dev": "gatsby develop",
 		"serve": "yarn clean && yarn build && gatsby serve",
 		"test": "echo 'should add some tests'",
-		"e2e": "start-server-and-test serve 9000 'percy exec -- cypress run'"
+		"e2e": "start-server-and-test 'gatsby serve' 9000 'cypress run'",
+		"e2e:ci": "start-server-and-test 'gatsby serve' 9000 'percy exec -- cypress run --record'"
 	},
 	"dependencies": {
 		"@babel/core": "7.6.2",

@@ -65,3 +65,4 @@ public
 .linaria-cache
 .DS_Store
 test-results
+/cypress/videos
