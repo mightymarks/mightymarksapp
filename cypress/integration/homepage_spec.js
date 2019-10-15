@@ -1,12 +1,12 @@
 /// <reference types="Cypress" />
 
 describe('The Home Page', function() {
-	it('successfully loads', function() {
-		cy.visit('/')
+	beforeEach(() => indexedDB.deleteDatabase('firebaseLocalStorageDb'))
+	beforeEach(() => cy.visit('/'))
 
-		cy.contains('Join the waiting list')
-
-		cy.get('h4')
+	it('shows the cookie banner', () =>
+		cy
+			.get('h4')
 			.contains('Let’s get this out of the way…')
 			.parent()
 			.then($el => {
@@ -16,8 +16,9 @@ describe('The Home Page', function() {
 					.then(() => {
 						expect(Cypress.dom.isHidden($el)).to.be.true
 					})
-			})
+			}))
 
-		cy.percySnapshot()
-	})
+	it('shows the sign up button', () => cy.contains('Join the waiting list'))
+
+	it('has no visual regressions', () => cy.percySnapshot())
 })
