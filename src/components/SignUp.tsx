@@ -13,7 +13,7 @@ const Error = styled.p`
 const SignUp: React.FC = () => {
 	const [user, loading, error] = useAuthState()
 
-	if (loading) return null
+	if (loading) return <p>loading</p>
 
 	if (error)
 		return (
