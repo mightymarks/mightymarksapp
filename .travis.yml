@@ -3,7 +3,6 @@ addons:
     apt:
         packages:
             - libgconf-2-4
-    chrome: stable
 cache:
     yarn: true
     directories:
