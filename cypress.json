@@ -1,11 +1,10 @@
 {
-	"baseUrl": "http://localhost:8000/",
+	"baseUrl": "http://localhost:9000",
 	"video": true,
 	"videoUploadOnPasses": false,
 	"reporter": "junit",
 	"reporterOptions": {
 		"mochaFile": "test-results/cypress/results.xml"
 	},
-	"projectId": "7i7qot",
-	"browser": "chrome"
+	"projectId": "7i7qot"
 }

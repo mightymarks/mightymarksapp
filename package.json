@@ -9,13 +9,15 @@
 	"main": "index.js",
 	"scripts": {
 		"build": "yarn clean && gatsby build",
+		"build:ci": "gatsby build",
 		"clean": "rm -rf ./public",
 		"cypress": "cypress open",
 		"dev": "gatsby develop",
 		"serve": "yarn clean && yarn build && gatsby serve",
+		"serve:ci": "gatsby serve",
 		"test": "echo 'should add some tests'",
-		"e2e": "start-server-and-test dev 8000 'cypress run'",
-		"e2e:ci": "start-server-and-test dev 8000 'percy exec -- cypress run --record'"
+		"e2e": "start-server-and-test serve 9000 'cypress run'",
+		"e2e:ci": "start-server-and-test serve:ci 9000 'percy exec -- cypress run --record'"
 	},
 	"dependencies": {
 		"@babel/core": "7.6.2",
