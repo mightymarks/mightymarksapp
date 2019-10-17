@@ -56,7 +56,8 @@
 		"automergeType": "pr",
 		"major": {
 			"automerge": false
-		}
+		},
+		"schedule": "schedule:daily"
 	},
 	"browserslist": [
 		"chrome >= 55",
