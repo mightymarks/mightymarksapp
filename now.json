@@ -1,10 +1,6 @@
 {
 	"version": 2,
 	"scope": "mightymarks",
-
-	"github": {
-		"autoAlias": false
-	},
 	"routes": [
 		{
 			"src": "/*",
