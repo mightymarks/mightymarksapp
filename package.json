@@ -9,6 +9,7 @@
 	"private": true,
 	"scripts": {
 		"test": "echo 'should add some tests'",
+		"test:ci": "yarn test",
 		"build": "yarn clean && gatsby build",
 		"serve": "yarn clean && yarn build && gatsby serve",
 		"dev": "gatsby develop",
