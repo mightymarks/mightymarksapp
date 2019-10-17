@@ -1,0 +1,14 @@
+{
+	"version": 2,
+	"name": "staging",
+	"scope": "mightymarks",
+
+	"alias": ["mightymarks"],
+	"routes": [
+		{
+			"src": "/*",
+			"headers": { "X-Robots-Tag": "noindex, nofollow" },
+			"continue": true
+		}
+	]
+}
