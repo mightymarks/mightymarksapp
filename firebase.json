@@ -1,0 +1,35 @@
+{
+	"hosting": {
+		"public": "public",
+		"ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+		"headers": [
+			{
+				"source": "**/*.@(woff|woff2)",
+				"headers": [
+					{
+						"key": "Access-Control-Allow-Origin",
+						"value": "*"
+					}
+				]
+			},
+			{
+				"source": "**/*.@(js|css|woff|woff2)",
+				"headers": [
+					{
+						"key": "Cache-Control",
+						"value": "public, max-age=315360000, immutable"
+					}
+				]
+			},
+			{
+				"source": "sw.js",
+				"headers": [
+					{
+						"key": "Cache-Control",
+						"value": "public, max-age=0, must-revalidate"
+					}
+				]
+			}
+		]
+	}
+}
