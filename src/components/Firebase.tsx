@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 
 const config = {
 	apiKey: process.env.GATSBY_FIREBASE_API_KEY,
-	authDomain: 'mighty-marks.firebaseapp.com',
+	authDomain: 'mightymarks.app',
 	databaseURL: 'https://mighty-marks.firebaseio.com',
 	projectId: 'mighty-marks',
 	storageBucket: 'mighty-marks.appspot.com',
