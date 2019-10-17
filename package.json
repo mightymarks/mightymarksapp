@@ -16,7 +16,7 @@
 		"clean": "rm -rf ./public"
 	},
 	"dependencies": {
-		"@babel/core": "7.6.2",
+		"@babel/core": "7.6.4",
 		"@types/react-helmet": "5.0.12",
 		"@types/react-transition-group": "4.2.3",
 		"dotenv": "8.1.0",
