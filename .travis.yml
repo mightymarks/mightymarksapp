@@ -4,3 +4,7 @@ cache:
 branches:
     only:
         - 'master'
+deploy:
+    skip_cleanup: true
+    provider: firebase
+    token: $FIREBASE_TOKEN
