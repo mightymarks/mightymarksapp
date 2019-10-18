@@ -1,4 +1,5 @@
 import { styled } from 'linaria/react'
+import { transparentize } from 'polished'
 import React, { useEffect, useState } from 'react'
 import { colors, fonts, fontSizes, space } from '../theme'
 
@@ -7,7 +8,7 @@ const ConsentWrapper = styled.div`
 	bottom: 0;
 	z-index: 9999999;
 	width: 100%;
-	background-color: rgba(255, 0, 64, 0.97);
+	background-color: ${transparentize(0.03, colors.blue)};
 	padding: 2rem;
 
 	h4 {
@@ -29,7 +30,7 @@ const ConsentWrapper = styled.div`
 		color: currentColor;
 
 		&:hover {
-			color: ${colors.yellow};
+			color: ${colors.red};
 		}
 	}
 `
