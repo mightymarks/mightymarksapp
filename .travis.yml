@@ -5,9 +5,6 @@ script:
     - yarn test:unit
     - yarn build
     - yarn test:regression
-branches:
-    only:
-        - 'master'
 deploy:
     skip_cleanup: true
     provider: firebase
