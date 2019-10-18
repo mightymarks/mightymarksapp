@@ -1,12 +1,12 @@
 exports.onCreateWebpackConfig = ({
-	/* eslint-disable @typescript-eslint/no-unused-vars */
+	/* eslint-disable no-unused-vars,@typescript-eslint/no-unused-vars */
 	stage,
 	rules,
 	loaders,
 	plugins,
 	actions,
 	getConfig,
-	/* eslint-enable @typescript-eslint/no-unused-vars */
+	/* eslint-enable no-unused-vars, @typescript-eslint/no-unused-vars */
 }) => {
 	const config = getConfig()
 
