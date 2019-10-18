@@ -48,17 +48,6 @@
 		"typescript": "3.6.3",
 		"webpack": "4.41.2"
 	},
-	"renovate": {
-		"extends": [
-			"config:base"
-		],
-		"automerge": true,
-		"automergeType": "pr",
-		"major": {
-			"automerge": false
-		},
-		"schedule": "schedule:daily"
-	},
 	"browserslist": [
 		"chrome >= 55",
 		"firefox >= 52",
