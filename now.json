@@ -4,7 +4,6 @@
 	"scope": "mightymarks",
 	"alias": ["mightymarks"],
 	"github": {
-		"autoAlias": false,
 		"silent": true
 	},
 	"routes": [
