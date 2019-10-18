@@ -2,8 +2,10 @@
 	"version": 2,
 	"name": "staging",
 	"scope": "mightymarks",
-
 	"alias": ["mightymarks"],
+	"github": {
+		"autoAlias": false
+	},
 	"routes": [
 		{
 			"src": "/*",
