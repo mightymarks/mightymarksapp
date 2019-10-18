@@ -1,0 +1,16 @@
+{
+	"version": 2,
+	"name": "staging",
+	"scope": "mightymarks",
+	"alias": ["mightymarks"],
+	"github": {
+		"silent": true
+	},
+	"routes": [
+		{
+			"src": "/*",
+			"headers": { "X-Robots-Tag": "noindex, nofollow" },
+			"continue": true
+		}
+	]
+}
