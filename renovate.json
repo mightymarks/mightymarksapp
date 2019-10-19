@@ -1,9 +1,8 @@
 {
-	"extends": ["config:base"],
+	"extends": ["config:base", "schedule:daily"],
 	"automerge": true,
 	"automergeType": "pr",
 	"major": {
 		"automerge": false
-	},
-	"schedule": "schedule:daily"
+	}
 }
