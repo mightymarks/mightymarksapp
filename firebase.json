@@ -26,7 +26,7 @@
 				"headers": [
 					{
 						"key": "Link",
-						"value": "</static/roboto-mono-latin-400-0c94e034ca06357576c2d03d623e1fcd.woff2>; rel=preload; as=font; crossorigin=anonymous; <https://www.google-analytics.com/analytics.js>; rel=preload; as=script;"
+						"value": "</static/roboto-mono-latin-400-0c94e034ca06357576c2d03d623e1fcd.woff2>; rel=preload; as=font; crossorigin=anonymous; nopush, <https://www.google-analytics.com/analytics.js>; rel=preload; as=script; nopush"
 					}
 				]
 			},
