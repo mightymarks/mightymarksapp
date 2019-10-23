@@ -59,13 +59,6 @@
 		"terser-webpack-plugin": "2.2.1",
 		"typeface-roboto-mono": "0.0.75",
 		"typescript": "3.6.4",
-		"webpack": "4.41.2"
-	},
-	"browserslist": [
-		"chrome >= 55",
-		"firefox >= 52",
-		"> 1%"
-	]
 		"webpack": "4.41.2",
 		"webpack-bundle-analyzer": "3.6.0",
 		"webpack-cli": "3.3.9",
