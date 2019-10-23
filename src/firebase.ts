@@ -3,7 +3,7 @@ import 'firebase/auth'
 import { useEffect, useState } from 'react'
 
 const config = {
-	apiKey: process.env.GATSBY_FIREBASE_API_KEY,
+	apiKey: 'AIzaSyAXZXdj-eJcuRtS9_qTxI3eIzUUV5023Lc',
 	authDomain: 'mightymarks.app',
 	databaseURL: 'https://mighty-marks.firebaseio.com',
 	projectId: 'mighty-marks',
@@ -13,7 +13,7 @@ const config = {
 	measurementId: 'G-PT9SZDFMST',
 }
 
-const getFirebase = () => {
+export const getFirebase = () => {
 	firebase.apps.length || firebase.initializeApp(config)
 	return firebase
 }

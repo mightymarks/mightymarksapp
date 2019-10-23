@@ -6,6 +6,9 @@ const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 const ExtensionReloader = require('webpack-extension-reloader')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const TerserPlugin = require('terser-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+require('dotenv').config()
 
 const DEV = process.env.NODE_ENV === 'development'
 
@@ -14,7 +17,8 @@ const DIST = path.resolve(__dirname, 'dist')
 module.exports = {
 	context: path.resolve(__dirname, 'src', 'extension'),
 	entry: {
-		background: './index.ts',
+		background: './background.ts',
+		popup: './popup.tsx',
 	},
 	output: {
 		path: DIST,
@@ -42,6 +46,13 @@ module.exports = {
 	plugins: [
 		new WebpackExtensionManifestPlugin({
 			config: { base: require('./src/extension/manifest.js') },
+		}),
+		new HtmlWebpackPlugin({
+			filename: 'popup.html',
+			chunks: ['popup'],
+			inject: false,
+			template: require('html-webpack-template'),
+			appMountId: 'app',
 		}),
 		new CopyPlugin([
 			{
@@ -83,5 +94,6 @@ module.exports = {
 	devServer: {
 		quiet: true,
 		writeToDisk: true,
+		disableHostCheck: true,
 	},
 }

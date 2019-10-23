@@ -12,6 +12,9 @@ module.exports = {
 	background: {
 		scripts: ['browser-polyfill.js', 'background.js'],
 	},
+	browser_action: {
+		default_popup: 'popup.html',
+	},
 	content_security_policy:
-		"script-src 'self' https://monomark.firebaseio.com; object-src 'self'",
+		"script-src 'self' https://mightymarks.app https://www.googleapis.com; object-src 'self'",
 }

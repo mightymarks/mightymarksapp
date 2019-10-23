@@ -3,10 +3,10 @@ import { styled } from 'linaria/react'
 import React from 'react'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import { CSSTransitionProps } from 'react-transition-group/CSSTransition'
+import { signIn, signOut, useAuthState } from '../firebase'
 import { tablet } from '../mq'
 import { colors, fonts, fontSizes } from '../theme'
 import Button from './Button'
-import { signIn, signOut, useAuthState } from './Firebase'
 import GitHubIcon from './GitHubIcon'
 
 const TRANSITION_DURATION = 200
