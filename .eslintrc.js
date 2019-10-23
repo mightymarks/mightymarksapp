@@ -22,7 +22,7 @@ module.exports = {
 		sourceType: 'module',
 	},
 	plugins: ['@typescript-eslint', 'react-hooks'],
-	rules: {},
+	rules: { 'no-mixed-spaces-and-tabs': 0 },
 	settings: {
 		react: {
 			version: 'detect',
