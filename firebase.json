@@ -1,44 +1,51 @@
 {
-	"hosting": {
-		"public": "public",
-		"ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-		"headers": [
-			{
-				"source": "**/*.@(woff|woff2)",
-				"headers": [
-					{
-						"key": "Access-Control-Allow-Origin",
-						"value": "*"
-					}
-				]
-			},
-			{
-				"source": "**/*.@(js|css|woff|woff2|jpg|jpeg|gif|svg|png)",
-				"headers": [
-					{
-						"key": "Cache-Control",
-						"value": "public, max-age=315360000, immutable"
-					}
-				]
-			},
-			{
-				"source": "/",
-				"headers": [
-					{
-						"key": "Link",
-						"value": "</static/roboto-mono-latin-400-0c94e034ca06357576c2d03d623e1fcd.woff2>; rel=preload; as=font; crossorigin=anonymous; nopush, <https://www.google-analytics.com/analytics.js>; rel=preload; as=script; nopush"
-					}
-				]
-			},
-			{
-				"source": "sw.js",
-				"headers": [
-					{
-						"key": "Cache-Control",
-						"value": "public, max-age=0, must-revalidate"
-					}
-				]
-			}
-		]
-	}
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "headers": [
+      {
+        "source": "**/*.@(woff|woff2)",
+        "headers": [
+          {
+            "key": "Access-Control-Allow-Origin",
+            "value": "*"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(js|css|woff|woff2|jpg|jpeg|gif|svg|png)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=315360000, immutable"
+          }
+        ]
+      },
+      {
+        "source": "/",
+        "headers": [
+          {
+            "key": "Link",
+            "value": "</static/roboto-mono-latin-400-0c94e034ca06357576c2d03d623e1fcd.woff2>; rel=preload; as=font; crossorigin=anonymous; nopush, <https://www.google-analytics.com/analytics.js>; rel=preload; as=script; nopush"
+          }
+        ]
+      },
+      {
+        "source": "sw.js",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=0, must-revalidate"
+          }
+        ]
+      }
+    ]
+  },
+  "functions": {
+    "predeploy": "npm --prefix \"$RESOURCE_DIR\" run build"
+  }
 }

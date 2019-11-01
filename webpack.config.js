@@ -1,58 +1,97 @@
+require('dotenv').config()
 const path = require('path')
 
+const SizePlugin = require('size-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 const WebpackExtensionManifestPlugin = require('webpack-extension-manifest-plugin')
-const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
-const ExtensionReloader = require('webpack-extension-reloader')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const TerserPlugin = require('terser-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-
-require('dotenv').config()
-
-const DEV = process.env.NODE_ENV === 'development'
+const FontConfigWebpackPlugin = require('font-config-webpack-plugin')
+const ScssConfigWebpackPlugin = require('scss-config-webpack-plugin')
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
+const ExtensionReloader = require('webpack-extension-reloader')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const DIST = path.resolve(__dirname, 'dist')
 
-module.exports = {
-	context: path.resolve(__dirname, 'src', 'extension'),
+module.exports = (env = { dev: true }) => ({
+	mode: env.prod ? 'production' : 'development',
+	devtool: env.prod ? 'source-map' : 'inline-cheap-module-source-map',
+	context: path.join(__dirname, 'src'),
 	entry: {
-		background: './background.ts',
-		popup: './popup.tsx',
+		background: './extension/background/index.ts',
+		popup: './extension/popup/index.tsx',
 	},
 	output: {
-		path: DIST,
 		filename: '[name].js',
+		path: DIST,
 	},
 	module: {
 		rules: [
 			{
 				test: /\.tsx?|\.jsx?$/,
+				exclude: /node_modules/,
 				use: [
+					// 'cache-loader',
+					'babel-loader',
 					{
-						loader: 'babel-loader',
+						loader: 'linaria/loader',
+						options: {
+							sourceMap: env.dev,
+						},
 					},
 				],
-				exclude: /node_modules/,
+			},
+			{
+				test: /\.css$/,
+				use: [
+					{
+						loader: MiniCssExtractPlugin.loader,
+						options: {
+							hmr: env.dev,
+						},
+					},
+					{
+						loader: 'css-loader',
+						options: {
+							sourceMap: env.dev,
+						},
+					},
+				],
+			},
+			{
+				test: /\.svg$/,
+				use: [
+					'cache-loader',
+					'babel-loader',
+					{
+						loader: 'react-svg-loader',
+						options: {
+							jsx: true,
+						},
+					},
+				],
 			},
 		],
 	},
 	resolve: {
 		extensions: ['.tsx', '.ts', '.js'],
 		mainFields: ['module', 'browser', 'main'],
+		alias: {
+			react: 'preact/compat',
+			'react-dom': 'preact/compat',
+			'react-dom/server': 'preact/compat',
+		},
 	},
-	mode: DEV ? 'development' : 'production',
-	devtool: DEV ? 'inline-source-map' : false,
 	plugins: [
+		new CleanWebpackPlugin({
+			cleanStaleWebpackAssets: false, // resolve conflict with `CopyWebpackPlugin`
+		}),
+		new FontConfigWebpackPlugin(),
 		new WebpackExtensionManifestPlugin({
 			config: { base: require('./src/extension/manifest.js') },
-		}),
-		new HtmlWebpackPlugin({
-			filename: 'popup.html',
-			chunks: ['popup'],
-			inject: false,
-			template: require('html-webpack-template'),
-			appMountId: 'app',
 		}),
 		new CopyPlugin([
 			{
@@ -60,40 +99,53 @@ module.exports = {
 				to: DIST,
 			},
 		]),
-		DEV
-			? null
-			: new BundleAnalyzerPlugin({
-					analyzerMode: 'static',
-					defaultSizes: 'parsed',
-					openAnalyzer: false,
-			  }),
-		DEV ? new FriendlyErrorsWebpackPlugin() : null,
-		DEV
-			? new ExtensionReloader({
-					entries: {
-						background: 'background', // REQUIRED
-					},
-			  })
-			: null,
+		new HtmlWebpackPlugin({
+			filename: 'popup.html',
+			chunks: ['popup'],
+			inject: false,
+			template: require('html-webpack-template'),
+			appMountId: 'app',
+		}),
+		new MiniCssExtractPlugin({
+			filename: 'styles.css',
+		}),
+		env.dev && new FriendlyErrorsWebpackPlugin(),
+		env.dev &&
+			new ExtensionReloader({
+				port: 8080,
+				entries: {
+					background: 'background', // REQUIRED
+					popup: 'popup',
+				},
+			}),
+		env.prod &&
+			new BundleAnalyzerPlugin({
+				analyzerMode: 'static',
+				defaultSizes: 'parsed',
+				openAnalyzer: false,
+			}),
+		env.prod &&
+			new SizePlugin({
+				exclude: '{report,browser-polyfill}.*',
+				filename: '.cache/size-plugin.json',
+			}),
 	].filter(Boolean),
-	watch: DEV,
 	target: 'web',
+	watch: env.dev,
+	performance: false,
+	stats: env.dev ? 'none' : 'errors-warnings',
 	optimization: {
+		minimize: env.prod,
 		minimizer: [
-			DEV
-				? null
-				: new TerserPlugin({
-						test: /\.tsx?|\.jsx?$/i,
-				  }),
-		].filter(Boolean),
+			new TerserPlugin({
+				test: /\.[tj]sx?$/i,
+				sourceMap: true,
+			}),
+		],
 	},
-	performance: {
-		hints: false,
-	},
-	stats: DEV ? 'none' : 'normal',
 	devServer: {
 		quiet: true,
 		writeToDisk: true,
 		disableHostCheck: true,
 	},
-}
+})

@@ -1,5 +1,4 @@
 import { graphql, useStaticQuery } from 'gatsby'
-import React from 'react'
 import { Helmet } from 'react-helmet'
 import ogImage from '../images/red1200.png'
 
@@ -8,7 +7,7 @@ interface Props {
 	article?: boolean
 }
 
-const SEO = ({ pathname = '/', article = false }: Props) => {
+const SEO = ({ pathname = '/' }: Props) => {
 	const data = useStaticQuery(graphql`
 		query SeoQuery {
 			site {

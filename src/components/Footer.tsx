@@ -1,5 +1,4 @@
 import { styled } from 'linaria/react'
-import React from 'react'
 import { tablet } from '../mq'
 import { colors, fonts } from '../theme'
 

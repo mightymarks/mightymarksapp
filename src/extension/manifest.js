@@ -1,4 +1,5 @@
 const pkg = require('read-pkg-up').sync().packageJson
+
 const { siteMetadata } = require('../../gatsby-config')
 
 module.exports = {
@@ -16,5 +17,5 @@ module.exports = {
 		default_popup: 'popup.html',
 	},
 	content_security_policy:
-		"script-src 'self' https://mightymarks.app https://www.googleapis.com; object-src 'self'",
+		"script-src 'self' https://mightymarks.app https://apis.google.com https://www.googletagmanager.com; object-src 'self'",
 }

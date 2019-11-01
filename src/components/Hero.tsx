@@ -1,5 +1,4 @@
 import { styled } from 'linaria/react'
-import React from 'react'
 import AppName from '../components/AppName'
 import ShootingStarSVG from '../images/shooting-star.svg'
 import { mobileS, tablet } from '../mq'
