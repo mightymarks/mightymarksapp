@@ -1,9 +1,11 @@
 import 'firebase/functions'
-import { firebase } from './app'
+import { getFirebase } from './app'
 
 export const FUNCTION_REGION = 'europe-west1'
 
-const functions = firebase.app().functions(FUNCTION_REGION)
+const functions = getFirebase()
+	.app()
+	.functions(FUNCTION_REGION)
 
 // functions.useFunctionsEmulator('http://localhost:5001')
 

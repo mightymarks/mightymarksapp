@@ -1,5 +1,6 @@
-import '../fonts.css'
-import '../reset.css'
+import React from 'react'
+import '../theme/fonts.css'
+import '../theme/reset.css'
 import CookieConsent from './CookieConsent'
 import SEO from './SEO'
 

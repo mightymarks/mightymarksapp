@@ -1,10 +1,11 @@
 import { css } from 'linaria'
 import { styled } from 'linaria/react'
+import React from 'react'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import { CSSTransitionProps } from 'react-transition-group/CSSTransition'
 import { signIn, signOut, useAuthState } from '../firebase/auth'
-import { tablet } from '../mq'
 import { colors, fonts, fontSizes } from '../theme'
+import { tablet } from '../theme/mq'
 import Button from './Button'
 import GitHubIcon from './GitHubIcon'
 

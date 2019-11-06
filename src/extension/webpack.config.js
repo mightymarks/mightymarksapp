@@ -1,3 +1,11 @@
+require('ts-node').register({
+	files: true,
+	compilerOptions: {
+		module: 'commonjs',
+		target: 'es2017',
+	},
+})
+
 require('dotenv').config()
 const path = require('path')
 
@@ -14,15 +22,15 @@ const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 const ExtensionReloader = require('webpack-extension-reloader')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
-const DIST = path.resolve(__dirname, 'dist')
+const DIST = path.resolve(__dirname, '..', '..', 'dist')
 
 module.exports = (env = { dev: true }) => ({
 	mode: env.prod ? 'production' : 'development',
 	devtool: env.prod ? 'source-map' : 'inline-cheap-module-source-map',
-	context: path.join(__dirname, 'src'),
+	context: path.join(__dirname),
 	entry: {
-		background: './extension/background/index.ts',
-		popup: './extension/popup/index.tsx',
+		background: './background/index.ts',
+		popup: './popup/index.tsx',
 	},
 	output: {
 		filename: '[name].js',
@@ -31,7 +39,7 @@ module.exports = (env = { dev: true }) => ({
 	module: {
 		rules: [
 			{
-				test: /\.tsx?|\.jsx?$/,
+				test: /\.[tj]sx?$/i,
 				exclude: /node_modules/,
 				use: [
 					// 'cache-loader',
@@ -91,7 +99,7 @@ module.exports = (env = { dev: true }) => ({
 		}),
 		new FontConfigWebpackPlugin(),
 		new WebpackExtensionManifestPlugin({
-			config: { base: require('./src/extension/manifest.js') },
+			config: { base: require('./manifest.ts') },
 		}),
 		new CopyPlugin([
 			{
@@ -127,7 +135,7 @@ module.exports = (env = { dev: true }) => ({
 		env.prod &&
 			new SizePlugin({
 				exclude: '{report,browser-polyfill}.*',
-				filename: '.cache/size-plugin.json',
+				filename: '../../.cache/size-plugin.json',
 			}),
 	].filter(Boolean),
 	target: 'web',

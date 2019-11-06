@@ -1,6 +1,6 @@
 import { styled } from 'linaria/react'
-import { mobileS, tablet } from '../mq'
 import { space } from '../theme'
+import { mobileS, tablet } from '../theme/mq'
 
 const Section = styled.section`
 	padding-bottom: ${space[1]};

@@ -1,5 +1,6 @@
 {
-	"name": "functions",
+	"name": "@mightymarks/firebase-functions",
+	"version": "0.1.0",
 	"scripts": {
 		"build": "tsc",
 		"serve": "npm run build && firebase serve --only functions",

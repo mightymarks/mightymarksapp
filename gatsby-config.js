@@ -1,15 +1,14 @@
+require('ts-node').register({
+	files: true,
+	compilerOptions: {
+		module: 'commonjs',
+		target: 'es2017',
+	},
+})
+
 require('dotenv').config()
 const { colors } = require('./src/theme')
-
-const siteMetadata = {
-	name: 'Mighty Marks',
-	title: 'Synchronize bookmarks!',
-	strapline: 'Cross-browser bookmark synching.',
-	description: `Mighty Marks keeps your browser bookmarks in sync – in Chrome, Firefox, Edge, Opera, Brave and more (Safari coming soon).`,
-	siteUrl: `https://mightymarks.app`,
-	author: `@sndrs`,
-	twitter: '@mightymarksapp',
-}
+const { siteMetadata } = require('./src/config')
 
 module.exports = {
 	siteMetadata,
@@ -62,7 +61,7 @@ module.exports = {
 				background_color: colors.darkWhite,
 				theme_color: colors.blue,
 				display: `standalone`,
-				icon: `src/images/blue-stroke-512.png`,
+				icon: require.resolve('./src/components/images/blue-stroke-512.png'),
 				cache_busting_mode: `name`,
 			},
 		},
@@ -70,7 +69,7 @@ module.exports = {
 			resolve: 'gatsby-plugin-react-svg',
 			options: {
 				rule: {
-					include: /src/,
+					include: /\.svg$/,
 				},
 			},
 		},

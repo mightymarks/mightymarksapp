@@ -9,14 +9,14 @@
 			}
 		],
 		"@babel/preset-react",
+		"linaria/babel",
 		[
 			"@babel/preset-typescript",
 			{
-				"allExtensions": true,
-				"isTSX": true
+				// "allExtensions": true,
+				// "isTSX": true
 			}
-		],
-		"linaria/babel"
+		]
 	],
 	"plugins": [
 		"@babel/plugin-proposal-class-properties",

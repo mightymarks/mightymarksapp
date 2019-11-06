@@ -1,6 +1,7 @@
 import { styled } from 'linaria/react'
-import { tablet } from '../mq'
+import React from 'react'
 import { colors, fonts } from '../theme'
+import { tablet } from '../theme/mq'
 
 const StyledFooter = styled.footer`
 	color: ${colors.red};

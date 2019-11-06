@@ -1,13 +1,13 @@
 const pkg = require('read-pkg-up').sync().packageJson
 
-const { siteMetadata } = require('../../gatsby-config')
+import { description, name } from '../config'
 
-module.exports = {
+export default {
 	manifest_version: 2,
-	name: siteMetadata.name,
+	name: name,
 	version: pkg.version,
 
-	description: siteMetadata.description,
+	description: description,
 
 	permissions: ['bookmarks'],
 	background: {

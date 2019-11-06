@@ -1,6 +1,6 @@
 import { styled } from 'linaria/react'
 import { transparentize } from 'polished'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { colors, fonts, fontSizes, space } from '../theme'
 
 const ConsentWrapper = styled.div`

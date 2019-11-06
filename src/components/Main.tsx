@@ -1,6 +1,6 @@
 import { styled } from 'linaria/react'
-import { tablet } from '../mq'
 import { colors } from '../theme'
+import { tablet } from '../theme/mq'
 
 const Main = styled.main`
 	background-color: ${colors.black};

@@ -1,7 +1,4 @@
-import 'firebase/analytics'
 import firebase from 'firebase/app'
-import 'firebase/performance'
-import 'first-input-delay'
 
 const config = {
 	apiKey: 'AIzaSyAXZXdj-eJcuRtS9_qTxI3eIzUUV5023Lc',
@@ -14,9 +11,11 @@ const config = {
 	measurementId: 'G-PT9SZDFMST',
 }
 
-if (!firebase.apps.length) firebase.initializeApp(config)
-
-export const perf = firebase.performance()
-export const analytics = firebase.analytics()
+export const getFirebase = () => {
+	if (!firebase.apps.length) {
+		firebase.initializeApp(config)
+	}
+	return firebase
+}
 
 export { firebase }

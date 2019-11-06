@@ -1,4 +1,5 @@
 import { styled } from 'linaria/react'
+import React from 'react'
 import AppName from '../components/AppName'
 import Callout from '../components/Callout'
 import Footer from '../components/Footer'
@@ -10,7 +11,7 @@ import Layout from '../components/Layout'
 import Main from '../components/Main'
 import Section from '../components/Section'
 import Text from '../components/Text'
-import { tablet } from '../mq'
+import { tablet } from '../theme/mq'
 
 const Grid = styled.div`
 	min-height: 100vh;

@@ -1,4 +1,5 @@
 import { styled } from 'linaria/react'
+import React from 'react'
 import { name } from '../config'
 
 const FormattedSiteName = styled.span`
