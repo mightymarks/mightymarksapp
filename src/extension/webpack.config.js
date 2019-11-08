@@ -22,7 +22,7 @@ const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 const ExtensionReloader = require('webpack-extension-reloader')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
-const DIST = path.resolve(__dirname, '..', '..', 'dist')
+const DIST = path.resolve(__dirname, '..', '..', 'dist', 'extension')
 
 module.exports = (env = { dev: true }) => ({
 	mode: env.prod ? 'production' : 'development',
@@ -99,7 +99,7 @@ module.exports = (env = { dev: true }) => ({
 		}),
 		new FontConfigWebpackPlugin(),
 		new WebpackExtensionManifestPlugin({
-			config: { base: require('./manifest.ts') },
+			config: { base: require('./manifest.ts').default },
 		}),
 		new CopyPlugin([
 			{
@@ -155,5 +155,6 @@ module.exports = (env = { dev: true }) => ({
 		quiet: true,
 		writeToDisk: true,
 		disableHostCheck: true,
+		port: 8001,
 	},
 })

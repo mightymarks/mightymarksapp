@@ -73,6 +73,12 @@ module.exports = {
 				},
 			},
 		},
+		{
+			resolve: `gatsby-plugin-page-creator`,
+			options: {
+				path: `${__dirname}/src/website`,
+			},
+		},
 		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-typescript',
 		'gatsby-plugin-preact',

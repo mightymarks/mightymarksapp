@@ -19,5 +19,5 @@
 		"target": "esnext"
 	},
 	"exclude": ["node_modules", "*.old"],
-	"include": ["**/*.ts", "**/*.tsx", "gatsby-node.js"]
+	"include": ["**/*.ts", "**/*.tsx", "src/website/gatsby-node.js"]
 }
