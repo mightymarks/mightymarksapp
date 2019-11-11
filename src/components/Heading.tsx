@@ -1,6 +1,6 @@
 import { styled } from 'linaria/react'
-import { tablet } from '../mq'
 import { colors, fonts, fontSizes, lineHeights } from '../theme'
+import { tablet } from '../theme/mq'
 
 const Heading = styled.h3`
 	font-family: ${fonts.mono};

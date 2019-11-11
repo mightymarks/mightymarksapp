@@ -19,6 +19,5 @@
 		"target": "esnext"
 	},
 	"exclude": ["node_modules", "*.old"],
-	"include": ["**/*.ts", "**/*.tsx", "gatsby-node.js"],
-	"types": ["cypress", "@percy/cypress"]
+	"include": ["**/*.ts", "**/*.tsx", "src/website/gatsby-node.js"]
 }

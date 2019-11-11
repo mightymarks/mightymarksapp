@@ -62,26 +62,21 @@ const CloseButton = styled.button`
 	}
 `
 
-const COOKIE_NAME = 'cookie-consent'
+const CONSENT_NAME = 'cookie-consent'
+const CONSENT_PROOF = '✓'
 
 const CookieConsent = () => {
 	const [requestConsent, setRequestConsent] = useState(true)
 	const [userConsented, setUserConsented] = useState(false)
 
 	const setCookie = () => {
-		document.cookie = `${COOKIE_NAME}=true; max-age=${60 * 60 * 24 * 365}`
+		localStorage.setItem(CONSENT_NAME, CONSENT_PROOF)
 		setUserConsented(true)
 	}
 
 	useEffect(
 		() =>
-			setRequestConsent(
-				Boolean(
-					document.cookie
-						.split(';')
-						.filter(item => item.includes(`${COOKIE_NAME}=true`)).length,
-				),
-			),
+			setRequestConsent(localStorage.getItem(CONSENT_NAME) === CONSENT_PROOF),
 		[userConsented],
 	)
 

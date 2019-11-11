@@ -4,10 +4,11 @@ export const onPreRenderHTML = ({
 }) => {
 	const headComponents = getHeadComponents()
 
-	headComponents.sort((x, y) => {
-		if (x.key === 'linaria-critical-css') {
+	// make sure linaria CSS is the end of the <head />
+	headComponents.sort((a, b) => {
+		if (a.key === 'linaria-critical-css') {
 			return 1
-		} else if (y.key === 'linaria-critical-css') {
+		} else if (b.key === 'linaria-critical-css') {
 			return -1
 		}
 		return 0

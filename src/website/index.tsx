@@ -6,12 +6,12 @@ import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Heading from '../components/Heading'
 import Hero from '../components/Hero'
+import SignUp from '../components/JoinMailingList'
 import Layout from '../components/Layout'
 import Main from '../components/Main'
 import Section from '../components/Section'
-import SignUp from '../components/SignUp'
 import Text from '../components/Text'
-import { tablet } from '../mq'
+import { tablet } from '../theme/mq'
 
 const Grid = styled.div`
 	min-height: 100vh;

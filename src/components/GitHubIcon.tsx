@@ -1,6 +1,6 @@
 import { styled } from 'linaria/react'
-import GitHubSVG from '../images/GitHub.svg'
 import { colors } from '../theme'
+import GitHubSVG from './images/GitHub.svg'
 
 const GitHubIcon = styled(GitHubSVG)`
 	fill: ${colors.darkWhite};

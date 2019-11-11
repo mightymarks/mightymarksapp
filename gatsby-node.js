@@ -1,3 +1,13 @@
+require('ts-node').register({
+	files: true,
+	compilerOptions: {
+		module: 'commonjs',
+		target: 'es2017',
+	},
+})
+
+const fs = require('fs-extra')
+
 exports.onCreateWebpackConfig = ({
 	/* eslint-disable no-unused-vars,@typescript-eslint/no-unused-vars */
 	stage,

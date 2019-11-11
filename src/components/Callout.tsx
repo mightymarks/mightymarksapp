@@ -1,6 +1,6 @@
 import { styled } from 'linaria/react'
-import { tablet } from '../mq'
 import { colors, fonts, fontSizes, lineHeights, space } from '../theme'
+import { tablet } from '../theme/mq'
 
 const Callout = styled.h2`
 	color: ${colors.blue};

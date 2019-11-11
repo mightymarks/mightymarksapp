@@ -1,9 +1,9 @@
 import { styled } from 'linaria/react'
 import React from 'react'
-import AppName from '../components/AppName'
-import ShootingStarSVG from '../images/shooting-star.svg'
-import { mobileS, tablet } from '../mq'
 import { colors, fonts, lineHeights } from '../theme'
+import { mobileS, tablet } from '../theme/mq'
+import AppName from './AppName'
+import ShootingStarSVG from './images/shooting-star.svg'
 import AvoidWrap from './util/AvoidWrap'
 
 const ShootingStar = styled(ShootingStarSVG)`

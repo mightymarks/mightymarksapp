@@ -1,4 +1,4 @@
-exports.colors = {
+export const colors = {
 	red: '#FF0040',
 	yellow: '#F7FF3F',
 	black: '#1D1616',
@@ -20,22 +20,22 @@ exports.colors = {
 	],
 }
 
-exports.fonts = {
+export const fonts = {
 	sans:
 		'-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
 	serif: '"Times New Roman", sans-serif',
 	mono: '"Roboto Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace',
 }
 
-exports.fontSizes = [12, 14, 16, 20, 24, 32, 48, 64, 72, 96].map(
+export const fontSizes = [12, 14, 16, 20, 24, 32, 48, 64, 72, 96].map(
 	size => `${size / 16}rem`,
 )
 
-exports.space = [0, 4, 8, 16, 32, 64, 128, 256, 512].map(
+export const space = [0, 4, 8, 16, 32, 64, 128, 256, 512].map(
 	size => `${size / 16}rem`,
 )
 
-exports.lineHeights = {
+export const lineHeights = {
 	hero: 1,
 	heading: 1.4,
 	text: 1.5,
