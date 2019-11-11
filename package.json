@@ -19,7 +19,7 @@
 		"serve:web": "yarn build:web && gatsby serve",
 		"test:regression": "percy snapshot public -i report.html",
 		"test:unit": "echo 'should add some tests'",
-		"validate": "yarn tsc --noEmit && yarn eslint . --debug"
+		"validate": "yarn tsc --noEmit && yarn eslint ."
 	},
 	"dependencies": {
 		"@babel/core": "7.6.4",
