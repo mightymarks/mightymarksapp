@@ -16,10 +16,10 @@
 		"clean:web": "rm -rf public",
 		"dev:ext": "yarn clean:ext && webpack --config ./src/extension/webpack.config.js",
 		"dev:web": "yarn clean:web && yarn gatsby develop",
-		"lint": "eslint .",
 		"serve:web": "yarn build:web && gatsby serve",
 		"test:regression": "percy snapshot public -i report.html",
-		"test:unit": "echo 'should add some tests'"
+		"test:unit": "echo 'should add some tests'",
+		"validate": "yarn tsc --noEmit && yarn eslint . --debug"
 	},
 	"dependencies": {
 		"@babel/core": "7.6.4",

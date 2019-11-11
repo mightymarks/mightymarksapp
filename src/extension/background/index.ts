@@ -1,10 +1,10 @@
-import { auth } from '../../firebase/auth'
-import { firestore, TIMESTAMP_KEY } from '../../firebase/firestore'
+import { getAuth } from '../../firebase/auth'
+import { TIMESTAMP_KEY } from '../../firebase/firestore'
 import { pushBookmarks } from '../../firebase/functions'
 import { highlightAuthStateToUser } from './badge'
 import { getLocalBookmarks } from './localBookmarks'
 
-auth.onAuthStateChanged(async user => {
+getAuth().onAuthStateChanged(async user => {
 	highlightAuthStateToUser(user)
 	if (user) {
 		const localBookmarks = await getLocalBookmarks()
@@ -21,19 +21,19 @@ auth.onAuthStateChanged(async user => {
 	// pushBookmarks(localBookmarks)
 }, console.error)
 
-const bookmarksHistoryRef = () =>
-	firestore
-		.collection('users')
-		.doc(auth.currentUser.uid)
-		.collection('bookmarks-history')
+// const bookmarksHistoryRef = () =>
+// 	firestore
+// 		.collection('users')
+// 		.doc(getAuth().currentUser.uid)
+// 		.collection('bookmarks-history')
 
-const remoteBookmarks = () => {
-	console.log('%c← fetching bookmarks', 'color: deeppink')
+// const remoteBookmarks = () => {
+// 	console.log('%c← fetching bookmarks', 'color: deeppink')
 
-	return bookmarksHistoryRef()
-		.orderBy(TIMESTAMP_KEY)
-		.limit(1)
-}
+// 	return bookmarksHistoryRef()
+// 		.orderBy(TIMESTAMP_KEY)
+// 		.limit(1)
+// }
 
 // const pushBookmarks = async () => {
 // 	console.log('%cpushing update →', 'color: deeppink')
@@ -44,6 +44,6 @@ const remoteBookmarks = () => {
 // 		[TIMESTAMP_KEY]: Date.now(),
 // 		...localBookmarks,
 // 		// very annoying workaround for https://github.com/firebase/firebase-functions/issues/300
-// 		uid: auth.currentUser.uid,
+// 		uid: getAuth().currentUser.uid,
 // 	})
 // }

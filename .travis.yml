@@ -2,7 +2,7 @@ language: node_js
 cache:
     yarn: true
 script:
-    - yarn lint
+    - yarn validate
     - yarn test:unit
     - yarn build
     - yarn test:regression
