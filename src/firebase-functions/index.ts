@@ -1,6 +1,8 @@
 import * as admin from 'firebase-admin'
 import * as functions from 'firebase-functions'
+
 const FUNCTION_REGION = 'europe-west1'
+// const TIMESTAMP_KEY = 'timestamp'
 
 admin.initializeApp()
 
@@ -40,11 +42,39 @@ export const pushBookmarks = functions
 				'The function must be called while authenticated.',
 			)
 		} else {
-			console.log('Writing to main bookmark file')
-
 			return db
-				.collection('users')
-				.doc(user.uid)
-				.set({ bookmarks }, { merge: true })
+				.runTransaction(async transaction => {
+					const userDoc = db
+						.collection('users')
+						.doc(user.uid)
+						.get()
+
+					console.log(userDoc)
+
+					// const [revisions] = await Promise.all([
+					// 	db
+					// 		.collection('users')
+					// 		.doc(user.uid)
+					// 		.collection('bookmark-revisions')
+					// 		.where(TIMESTAMP_KEY, '>', bookmarks[TIMESTAMP_KEY])
+					// 		.orderBy(TIMESTAMP_KEY),
+					// ])
+					return
+				})
+				.then(function() {
+					console.log('Transaction successfully committed!')
+				})
+				.catch(function(error) {
+					console.log('Transaction failed: ', error)
+				})
+
+			// const revisions =
+
+			// return db
+			// 	.collection('users')
+			// 	.doc(user.uid)
+			// 	.collection('bookmark-revisions')
+			// 	.add({ bookmarks })
+			// // .set({ bookmarks }, { merge: true })
 		}
 	})

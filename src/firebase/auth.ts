@@ -1,6 +1,6 @@
 import 'firebase/auth'
 import { useEffect, useState } from 'react'
-import { firebase, getFirebase } from './app'
+import { firebase, getFirebase } from '.'
 
 const githubAuthProvider = new firebase.auth.GithubAuthProvider()
 

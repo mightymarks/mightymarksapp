@@ -1,5 +1,5 @@
 import 'firebase/firestore'
-import { getFirebase } from './app'
+import { getFirebase } from '.'
 
 export const firestore = getFirebase().firestore()
 
