@@ -5481,10 +5481,10 @@ gatsby-plugin-google-analytics@2.1.24:
   dependencies:
     "@babel/runtime" "^7.6.3"
 
-gatsby-plugin-linaria@1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-linaria/-/gatsby-plugin-linaria-1.2.2.tgz#68b872ba805e5ceba6a9989056416db1f2877ea9"
-  integrity sha512-GjkYVSro865BSN1eBigj6o6t3b+Ehdhyf9CT9pUxG9dV4Qfrpxvdv1rcwXwqnhPeodY9ttu0R18eLOHUr4l3fA==
+gatsby-plugin-linaria@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-linaria/-/gatsby-plugin-linaria-2.0.0.tgz#387be2e4e9a28b763695755e39b2f17953151d04"
+  integrity sha512-n7jvvc7bmTPY2J+tL9NAoq63mNTIKOsvMWD0p+Ktq7hFWwXZDwrWvaRgjPTa24ZqgwImC2vc8/RQS/VzM2VePQ==
 
 gatsby-plugin-manifest@2.2.26:
   version "2.2.26"

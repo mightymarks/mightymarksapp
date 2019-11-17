@@ -31,7 +31,7 @@
 		"gatsby": "2.17.10",
 		"gatsby-plugin-canonical-urls": "2.1.13",
 		"gatsby-plugin-google-analytics": "2.1.24",
-		"gatsby-plugin-linaria": "1.2.2",
+		"gatsby-plugin-linaria": "2.0.0",
 		"gatsby-plugin-manifest": "2.2.26",
 		"gatsby-plugin-preact": "3.1.19",
 		"gatsby-plugin-react-helmet": "3.1.13",
