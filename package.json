@@ -50,7 +50,7 @@
 		"react-transition-group": "4.3.0",
 		"typeface-roboto-mono": "0.0.75",
 		"typescript": "3.8.3",
-		"webpack": "4.42.1"
+		"webpack": "4.43.0"
 	},
 	"browserslist": [
 		"chrome >= 55",
